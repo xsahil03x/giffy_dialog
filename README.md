@@ -18,8 +18,9 @@ The source code is **100% Dart**, and everything resides in the [/lib](https://g
 # 💻 Installation
 In the `dependencies:` section of your `pubspec.yaml`, add the following line:
 
-```
-giffy_dialog: <latest_version>
+```yaml
+dependencies:
+  giffy_dialog: <current version>
 ```
 `Current Version : ^0.1.0`
 
@@ -27,9 +28,11 @@ giffy_dialog: <latest_version>
 # ❔ Usage
 
 ### Import this class
-```
+
+```dart
 import 'package:giffy_dialog/giffy_dialog.dart';
 ```
+
 ### Network giffy dialog
 
 <img src="https://user-images.githubusercontent.com/25670178/51350453-379afc80-1ace-11e9-91b4-3ceea44e7bad.gif" align = "right" height = "350" alt="Network">
