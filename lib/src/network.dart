@@ -77,8 +77,7 @@ class NetworkGiffyDialog extends StatelessWidget {
                   RaisedButton(
                     color: buttonCancelColor ?? Colors.grey,
                     shape: RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(buttonRadius)),
+                        borderRadius: BorderRadius.circular(buttonRadius)),
                     onPressed: () => Navigator.of(context).pop(),
                     child: buttonCancelText ??
                         Text(
@@ -89,8 +88,7 @@ class NetworkGiffyDialog extends StatelessWidget {
                   RaisedButton(
                     color: buttonOkColor ?? Colors.green,
                     shape: RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(buttonRadius)),
+                        borderRadius: BorderRadius.circular(buttonRadius)),
                     onPressed: onOkButtonPressed ?? () {},
                     child: buttonOkText ??
                         Text(
