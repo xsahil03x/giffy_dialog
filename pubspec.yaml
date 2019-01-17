@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   cached_network_image: ^0.5.1
-  flare_flutter:
+  flare_flutter: ^1.0.11
 
 dev_dependencies:
   flutter_test:
