@@ -1,0 +1,20 @@
+name: giffy_dialog
+description: A Flutter package for a quick and handy gif dialog.
+version: 0.1.0
+author: Sahil Kumar <xdsahil@gmail.com>
+homepage: https://github.com/xsahil03x/giffy_dialog
+
+environment:
+  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cached_network_image: ^0.5.1
+  flare_flutter:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
