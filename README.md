@@ -2,7 +2,7 @@
 
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/xsahil03x) [![Twitter](https://img.shields.io/twitter/url/https/github.com/xsahil03x/giffy_dialog.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fxsahil03x%2Fgiffy_dialog)
 
-<div align="center"><p>A beautiful and custom alert dialog for flutter highly inspired from <a href="https://github.com/Shashank02051997/FancyGifDialog-Android">FancyAlertDialog-Android</a>.</p></div><br>
+<p>A beautiful and custom alert dialog for flutter highly inspired from <a href="https://github.com/Shashank02051997/FancyGifDialog-Android">FancyAlertDialog-Android</a>.</p>
 
 The source code is **100% Dart**, and everything resides in the [/lib](https://github.com/xsahil03x/giffy_dialog/tree/master/lib) folder.
 
@@ -15,7 +15,7 @@ The source code is **100% Dart**, and everything resides in the [/lib](https://g
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/MIT)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/xsahil03x/giffy_dialog/blob/master/LICENSE)
 
-## 💻 Installation
+# 💻 Installation
 In the `dependencies:` section of your `pubspec.yaml`, add the following line:
 
 ```
@@ -23,7 +23,8 @@ giffy_dialog: <latest_version>
 ```
 `Current Version : ^0.1.0`
 
-## ❔ Usage
+
+# ❔ Usage
 
 ### Import this class
 ```
