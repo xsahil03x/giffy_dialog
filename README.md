@@ -18,11 +18,12 @@ The source code is **100% Dart**, and everything resides in the [/lib](https://g
 # 💻 Installation
 In the `dependencies:` section of your `pubspec.yaml`, add the following line:
 
+[![Version](https://img.shields.io/pub/v/giffy_dialog.svg)](https://pub.dartlang.org/packages/giffy_dialog)
+
 ```yaml
 dependencies:
-  giffy_dialog: <current version>
+  giffy_dialog: <latest version>
 ```
-`Current Version : ^0.1.0`
 
 
 # ❔ Usage
