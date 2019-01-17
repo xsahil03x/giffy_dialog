@@ -77,7 +77,6 @@ class MyHomePage extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: TextStyle(),
                             ),
-                            cardBackgroundColor: Colors.lightBlue,
                             onOkButtonPressed: () {},
                           ));
                 }),
