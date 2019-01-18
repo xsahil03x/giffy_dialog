@@ -89,7 +89,7 @@ onPressed: () {
 ```dart
 onPressed: () {
   showDialog(
-  context: context,builder: (_) => NetworkGiffyDialog(
+  context: context,builder: (_) => AssetGiffyDialog(
     imagePath: 'assets/men_wearing_jacket.gif',
     title: Text('Men Wearing Jackets',
             style: TextStyle(
