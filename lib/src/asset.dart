@@ -4,6 +4,7 @@ class AssetGiffyDialog extends StatelessWidget {
   final String imagePath;
   final Text title;
   final Text description;
+  final bool onlyOkButton;
   final Text buttonOkText;
   final Text buttonCancelText;
   final Color buttonOkColor;
@@ -18,6 +19,7 @@ class AssetGiffyDialog extends StatelessWidget {
     @required this.title,
     @required this.onOkButtonPressed,
     this.description,
+    this.onlyOkButton = false,
     this.buttonOkText,
     this.buttonCancelText,
     this.buttonOkColor,
@@ -71,9 +73,9 @@ class AssetGiffyDialog extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: !onlyOkButton ? MainAxisAlignment.spaceEvenly : MainAxisAlignment.center,
                 children: <Widget>[
-                  RaisedButton(
+                  !onlyOkButton ? RaisedButton(
                     color: buttonCancelColor ?? Colors.grey,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(buttonRadius)),
@@ -83,7 +85,7 @@ class AssetGiffyDialog extends StatelessWidget {
                           'Cancel',
                           style: TextStyle(color: Colors.white),
                         ),
-                  ),
+                  ): Container(),
                   RaisedButton(
                     color: buttonOkColor ?? Colors.green,
                     shape: RoundedRectangleBorder(
