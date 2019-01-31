@@ -81,19 +81,24 @@ class FlareGiffyDialog extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
-                mainAxisAlignment: !onlyOkButton ? MainAxisAlignment.spaceEvenly : MainAxisAlignment.center,
+                mainAxisAlignment: !onlyOkButton
+                    ? MainAxisAlignment.spaceEvenly
+                    : MainAxisAlignment.center,
                 children: <Widget>[
-                  !onlyOkButton ? RaisedButton(
-                    color: buttonCancelColor ?? Colors.grey,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(buttonRadius)),
-                    onPressed: () => Navigator.of(context).pop(),
-                    child: buttonCancelText ??
-                        Text(
-                          'Cancel',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                  ): Container(),
+                  !onlyOkButton
+                      ? RaisedButton(
+                          color: buttonCancelColor ?? Colors.grey,
+                          shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.circular(buttonRadius)),
+                          onPressed: () => Navigator.of(context).pop(),
+                          child: buttonCancelText ??
+                              Text(
+                                'Cancel',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                        )
+                      : Container(),
                   RaisedButton(
                     color: buttonOkColor ?? Colors.green,
                     shape: RoundedRectangleBorder(
