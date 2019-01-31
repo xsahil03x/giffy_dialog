@@ -5,6 +5,7 @@ class NetworkGiffyDialog extends StatelessWidget {
   final String imageUrl;
   final Text title;
   final Text description;
+  final bool onlyOkButton;
   final Text buttonOkText;
   final Text buttonCancelText;
   final Color buttonOkColor;
@@ -19,6 +20,7 @@ class NetworkGiffyDialog extends StatelessWidget {
     @required this.title,
     @required this.onOkButtonPressed,
     this.description,
+    this.onlyOkButton = false,
     this.buttonOkText,
     this.buttonCancelText,
     this.buttonOkColor,
@@ -72,9 +74,9 @@ class NetworkGiffyDialog extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: !onlyOkButton ? MainAxisAlignment.spaceEvenly : MainAxisAlignment.center,
                 children: <Widget>[
-                  RaisedButton(
+                  !onlyOkButton ? RaisedButton(
                     color: buttonCancelColor ?? Colors.grey,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(buttonRadius)),
@@ -84,7 +86,7 @@ class NetworkGiffyDialog extends StatelessWidget {
                           'Cancel',
                           style: TextStyle(color: Colors.white),
                         ),
-                  ),
+                  ): Container(),
                   RaisedButton(
                     color: buttonOkColor ?? Colors.green,
                     shape: RoundedRectangleBorder(
