@@ -1,3 +1,7 @@
+1.2.0
+
+    Add widget tests and description.
+
 1.1.1
 
     Fix formatting.
