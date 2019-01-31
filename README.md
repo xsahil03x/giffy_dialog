@@ -14,6 +14,7 @@ The source code is **100% Dart**, and everything resides in the [/lib](https://g
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/MIT)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/xsahil03x/giffy_dialog/blob/master/LICENSE)
+[![Build Status](https://travis-ci.com/aagarwal1012/Animated-Text-Kit.svg?token=pXLTRcXnVLpccbxqiWBi&branch=master)](https://travis-ci.com/xsahil03x/giffy_dialog)
 
 # 💻 Installation
 In the `dependencies:` section of your `pubspec.yaml`, add the following line:
