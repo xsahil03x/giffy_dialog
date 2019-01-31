@@ -3,6 +3,15 @@ import 'package:giffy_dialog/giffy_dialog.dart';
 
 void main() => runApp(new MyApp());
 
+const List<Key> keys = [
+  Key("Network"),
+  Key("NetworkDialog"),
+  Key("Flare"),
+  Key("FlareDialog"),
+  Key("Asset"),
+  Key("AssetDialog")
+];
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -27,6 +36,7 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             RaisedButton(
+                key: keys[0],
                 color: Colors.teal,
                 child: Text(
                   'Network Giffy',
@@ -38,6 +48,7 @@ class MyHomePage extends StatelessWidget {
                   showDialog(
                       context: context,
                       builder: (_) => NetworkGiffyDialog(
+                            key: keys[1],
                             imageUrl:
                                 "https://raw.githubusercontent.com/Shashank02051997/FancyGifDialog-Android/master/GIF's/gif14.gif",
                             title: Text(
@@ -54,6 +65,7 @@ class MyHomePage extends StatelessWidget {
                           ));
                 }),
             RaisedButton(
+                key: keys[2],
                 color: Colors.teal,
                 child: Text(
                   'Flare Giffy',
@@ -65,6 +77,7 @@ class MyHomePage extends StatelessWidget {
                   showDialog(
                       context: context,
                       builder: (_) => FlareGiffyDialog(
+                            key: keys[3],
                             flarePath: 'assets/space_demo.flr',
                             flareAnimation: 'loading',
                             title: Text(
@@ -81,6 +94,7 @@ class MyHomePage extends StatelessWidget {
                           ));
                 }),
             RaisedButton(
+                key: keys[4],
                 color: Colors.teal,
                 child: Text(
                   'Asset Giffy',
@@ -92,6 +106,7 @@ class MyHomePage extends StatelessWidget {
                   showDialog(
                       context: context,
                       builder: (_) => AssetGiffyDialog(
+                            key: keys[5],
                             imagePath: 'assets/men_wearing_jacket.gif',
                             title: Text(
                               'Men Wearing Jackets',
