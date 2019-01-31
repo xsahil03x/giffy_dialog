@@ -1,3 +1,7 @@
+1.1.1
+
+    Fix formatting.
+
 1.1.0
 
     Added Boolean to show only OK button.
