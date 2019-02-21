@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class NetworkGiffyDialog extends StatelessWidget {
-  final String imageUrl;
+  final Widget image;
   final Text title;
   final Text description;
   final bool onlyOkButton;
@@ -16,7 +16,7 @@ class NetworkGiffyDialog extends StatelessWidget {
 
   NetworkGiffyDialog({
     Key key,
-    @required this.imageUrl,
+    @required this.image,
     @required this.title,
     @required this.onOkButtonPressed,
     this.description,
@@ -27,7 +27,7 @@ class NetworkGiffyDialog extends StatelessWidget {
     this.buttonCancelColor,
     this.cornerRadius = 8.0,
     this.buttonRadius = 8.0,
-  })  : assert(imageUrl != null),
+  })  : assert(image != null),
         assert(title != null),
         super(key: key);
 
@@ -55,10 +55,7 @@ class NetworkGiffyDialog extends StatelessWidget {
                             topRight: Radius.circular(cornerRadius),
                             topLeft: Radius.circular(cornerRadius))),
                     clipBehavior: Clip.antiAlias,
-                    child: CachedNetworkImage(
-                      imageUrl: imageUrl,
-                      fit: BoxFit.cover,
-                    ),
+                    child: image,
                   ),
                 ),
                 Padding(

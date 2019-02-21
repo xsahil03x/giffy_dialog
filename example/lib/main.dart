@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:giffy_dialog/giffy_dialog.dart';
 
@@ -49,8 +50,11 @@ class MyHomePage extends StatelessWidget {
                       context: context,
                       builder: (_) => NetworkGiffyDialog(
                             key: keys[1],
-                            imageUrl:
-                                "https://raw.githubusercontent.com/Shashank02051997/FancyGifDialog-Android/master/GIF's/gif14.gif",
+                            image:
+                              CachedNetworkImage(
+                                imageUrl: "https://raw.githubusercontent.com/Shashank02051997/FancyGifDialog-Android/master/GIF's/gif14.gif",
+                                fit: BoxFit.cover,
+                              ),
                             title: Text(
                               'Granny Eating Chocolate',
                               textAlign: TextAlign.center,
@@ -107,7 +111,10 @@ class MyHomePage extends StatelessWidget {
                       context: context,
                       builder: (_) => AssetGiffyDialog(
                             key: keys[5],
-                            imagePath: 'assets/men_wearing_jacket.gif',
+                            image: Image.asset(
+                              'assets/men_wearing_jacket.gif',
+                              fit: BoxFit.cover,
+                            ),
                             title: Text(
                               'Men Wearing Jackets',
                               style: TextStyle(
