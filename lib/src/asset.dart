@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AssetGiffyDialog extends StatelessWidget {
-  final String imagePath;
+  final Image image;
   final Text title;
   final Text description;
   final bool onlyOkButton;
@@ -15,7 +15,7 @@ class AssetGiffyDialog extends StatelessWidget {
 
   AssetGiffyDialog({
     Key key,
-    @required this.imagePath,
+    @required this.image,
     @required this.title,
     @required this.onOkButtonPressed,
     this.description,
@@ -26,7 +26,7 @@ class AssetGiffyDialog extends StatelessWidget {
     this.buttonCancelColor,
     this.cornerRadius = 8.0,
     this.buttonRadius = 8.0,
-  })  : assert(imagePath != null),
+  })  : assert(image != null),
         assert(title != null),
         super(key: key);
 
@@ -54,10 +54,7 @@ class AssetGiffyDialog extends StatelessWidget {
                             topRight: Radius.circular(cornerRadius),
                             topLeft: Radius.circular(cornerRadius))),
                     clipBehavior: Clip.antiAlias,
-                    child: Image.asset(
-                      imagePath,
-                      fit: BoxFit.cover,
-                    ),
+                    child: image,
                   ),
                 ),
                 Padding(
