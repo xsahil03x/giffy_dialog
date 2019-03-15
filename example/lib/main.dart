@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:giffy_dialog/giffy_dialog.dart';
 
@@ -50,11 +49,10 @@ class MyHomePage extends StatelessWidget {
                       context: context,
                       builder: (_) => NetworkGiffyDialog(
                             key: keys[1],
-                            image:
-                              CachedNetworkImage(
-                                imageUrl: "https://raw.githubusercontent.com/Shashank02051997/FancyGifDialog-Android/master/GIF's/gif14.gif",
-                                fit: BoxFit.cover,
-                              ),
+                            image: Image.network(
+                              "https://raw.githubusercontent.com/Shashank02051997/FancyGifDialog-Android/master/GIF's/gif14.gif",
+                              fit: BoxFit.cover,
+                            ),
                             title: Text(
                               'Granny Eating Chocolate',
                               textAlign: TextAlign.center,
