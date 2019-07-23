@@ -40,22 +40,25 @@ import 'package:giffy_dialog/giffy_dialog.dart';
 <img src="https://user-images.githubusercontent.com/25670178/51350453-379afc80-1ace-11e9-91b4-3ceea44e7bad.gif" align = "right" height = "350" alt="Network">
 
 ```dart
-onPressed: () {
+onPressed:() {
   showDialog(
-  context: context,builder: (_) => NetworkGiffyDialog(
-    imageUrl:"https://raw.githubusercontent.com/Shashank02051997/
-              FancyGifDialog-Android/master/GIF's/gif14.gif",
-    title: Text('Granny Eating Chocolate',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-            fontSize: 22.0,
-            fontWeight: FontWeight.w600)),
-    description:Text('This is a granny eating chocolate dialog box.
-          This library helps you easily create fancy giffy dialog',
+    context: context,
+    barrierDismissible: false, // Whether you can dismiss this dialog by tapping the modal barrier
+    builder: (_) => NetworkGiffyDialog(
+      image: Image.network(
+        "https://raw.githubusercontent.com/Shashank02051997/FancyGifDialog-Android/master/GIF's/gif14.gif",
+        fit: BoxFit.fill,
+      ),
+      title: Text('Granny Eating Chocolate',
           textAlign: TextAlign.center,
-        ),
-    onOkButtonPressed: () {},
-  ) );
+          style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600)),
+      description: Text(
+        'This is a granny eating chocolate dialog box.This library helps you easily create fancy giffy dialog',
+        textAlign: TextAlign.center,
+      ),
+      onOkButtonPressed: () {},
+    ),
+  );
 }
 ```
 
@@ -64,22 +67,25 @@ onPressed: () {
 <img src="https://user-images.githubusercontent.com/25670178/51350659-c576e780-1ace-11e9-94f2-ce463af2218a.gif" align = "right" height = "350" alt="Flare">
 
 ```dart
-onPressed: () {
+onPressed:() {
   showDialog(
-  context: context,builder: (_) => FlareGiffyDialog(
-    flarePath: 'assets/space_demo.flr',
-    flareAnimation: 'loading',
-    title: Text('Space Reloading',
-           style: TextStyle(
-           fontSize: 22.0, fontWeight: FontWeight.w600),
+    context: context,
+    barrierDismissible: false, // Whether you can dismiss this dialog by tapping the modal barrier
+    builder: (_) => FlareGiffyDialog(
+      flarePath: 'assets/space_demo.flr',
+      flareAnimation: 'loading',
+      title: Text(
+        'Space Reloading',
+        style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600),
+      ),
+      description: Text(
+        'This is a space reloading dialog box.This library helps you easily create fancy flare dialog.',
+        textAlign: TextAlign.center,
+        style: TextStyle(),
+      ),
+      onOkButtonPressed: () {},
     ),
-    description: Text('This is a space reloading dialog box.
-          This library helps you easily create fancy flare dialog.',
-          textAlign: TextAlign.center,
-          style: TextStyle(),
-        ),
-    onOkButtonPressed: () {},
-  ) );
+  );
 }
 ```
 
@@ -88,22 +94,25 @@ onPressed: () {
 <img src="https://user-images.githubusercontent.com/25670178/51350846-4504b680-1acf-11e9-8f9d-d6704742ff21.gif" align = "right" height = "350" alt="Asset">
 
 ```dart
-onPressed: () {
-  showDialog(
-  context: context,builder: (_) => AssetGiffyDialog(
-    imagePath: 'assets/men_wearing_jacket.gif',
-    title: Text('Men Wearing Jackets',
-            style: TextStyle(
-            fontSize: 22.0, fontWeight: FontWeight.w600),
-    ),
-    description: Text('This is a men wearing jackets dialog box.
-          This library helps you easily create fancy giffy dialog.',
+onPressed:() {
+    showDialog(
+      context: context,
+      barrierDismissible: false, // Whether you can dismiss this dialog by tapping the modal barrier
+      builder: (_) => AssetGiffyDialog(
+        image: Image.asset('assets/men_wearing_jacket.gif', fit: BoxFit.fill),
+        title: Text(
+          'Men Wearing Jackets',
+          style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600),
+        ),
+        description: Text(
+          'This is a men wearing jackets dialog box.This library helps you easily create fancy giffy dialog.',
           textAlign: TextAlign.center,
           style: TextStyle(),
         ),
-    onOkButtonPressed: () {},
-  ) );
-}
+        onOkButtonPressed: () {},
+      ),
+    );
+  }
 ```
 
 # 👍 How to Contribute
