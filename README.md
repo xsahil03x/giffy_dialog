@@ -43,16 +43,14 @@ import 'package:giffy_dialog/giffy_dialog.dart';
 onPressed: () {
   showDialog(
   context: context,builder: (_) => NetworkGiffyDialog(
-    imageUrl:"https://raw.githubusercontent.com/Shashank02051997/
-              FancyGifDialog-Android/master/GIF's/gif14.gif",
+    image:"https://raw.githubusercontent.com/Shashank02051997/FancyGifDialog-Android/master/GIF's/gif14.gif",
     title: Text('Granny Eating Chocolate',
             textAlign: TextAlign.center,
             style: TextStyle(
             fontSize: 22.0,
             fontWeight: FontWeight.w600)),
-    description:Text('This is a granny eating chocolate dialog box.
-          This library helps you easily create fancy giffy dialog',
-          textAlign: TextAlign.center,
+            description:Text('This is a granny eating chocolate dialog box. This library helps you easily create fancy giffy dialog',
+            textAlign: TextAlign.center,
         ),
     onOkButtonPressed: () {},
   ) );
