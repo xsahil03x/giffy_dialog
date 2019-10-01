@@ -11,13 +11,17 @@ class NetworkGiffyDialog extends StatelessWidget {
   final Color buttonCancelColor;
   final double buttonRadius;
   final double cornerRadius;
+
+  /// set [null], to make button not clickable
   final VoidCallback onOkButtonPressed;
+  final VoidCallback onCancelButtonPressed;
 
   NetworkGiffyDialog({
     Key key,
     @required this.image,
     @required this.title,
     @required this.onOkButtonPressed,
+    this.onCancelButtonPressed,
     this.description,
     this.onlyOkButton = false,
     this.buttonOkText,
@@ -80,7 +84,10 @@ class NetworkGiffyDialog extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius:
                                   BorderRadius.circular(buttonRadius)),
-                          onPressed: () => Navigator.of(context).pop(),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                            onCancelButtonPressed?.call();
+                          },
                           child: buttonCancelText ??
                               Text(
                                 'Cancel',
@@ -92,7 +99,8 @@ class NetworkGiffyDialog extends StatelessWidget {
                     color: buttonOkColor ?? Colors.green,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(buttonRadius)),
-                    onPressed: onOkButtonPressed ?? () {},
+                    onPressed:
+                        onOkButtonPressed, // On passing Null button will not look clickable
                     child: buttonOkText ??
                         Text(
                           'OK',
