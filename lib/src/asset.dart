@@ -138,7 +138,7 @@ class AssetGiffyDialog extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     Expanded(
-                                          child: Column(
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           title,
