@@ -31,3 +31,6 @@ GeneratedPluginRegistrant.m
 GeneratedPluginRegistrant.java
 build/
 .flutter-plugins
+
+flutter_export_environment.sh
+strings_en.arb
