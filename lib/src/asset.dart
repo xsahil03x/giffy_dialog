@@ -5,6 +5,7 @@ class AssetGiffyDialog extends StatelessWidget {
   final Text title;
   final Text description;
   final bool onlyOkButton;
+  final bool verticalButtons;
   final Text buttonOkText;
   final Text buttonCancelText;
   final Color buttonOkColor;
@@ -12,6 +13,7 @@ class AssetGiffyDialog extends StatelessWidget {
   final double buttonRadius;
   final double cornerRadius;
   final VoidCallback onOkButtonPressed;
+  final VoidCallback onCancelButtonPressed;
 
   AssetGiffyDialog({
     Key key,
@@ -26,6 +28,8 @@ class AssetGiffyDialog extends StatelessWidget {
     this.buttonCancelColor,
     this.cornerRadius = 8.0,
     this.buttonRadius = 8.0,
+    this.verticalButtons = false,
+    this.onCancelButtonPressed,
   })  : assert(image != null),
         assert(title != null),
         super(key: key);
@@ -36,7 +40,10 @@ class AssetGiffyDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(cornerRadius)),
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.6,
+        height: MediaQuery
+            .of(context)
+            .size
+            .height * 0.65,
         width: MediaQuery.of(context).size.width * 0.8,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,29 +76,67 @@ class AssetGiffyDialog extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Row(
+              child: verticalButtons
+                  ? Column(
                 mainAxisAlignment: !onlyOkButton
                     ? MainAxisAlignment.spaceEvenly
                     : MainAxisAlignment.center,
                 children: <Widget>[
                   !onlyOkButton
                       ? RaisedButton(
-                          color: buttonCancelColor ?? Colors.grey,
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.circular(buttonRadius)),
-                          onPressed: () => Navigator.of(context).pop(),
-                          child: buttonCancelText ??
-                              Text(
-                                'Cancel',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                        )
+                    color: buttonCancelColor ?? Colors.grey,
+                    shape: RoundedRectangleBorder(
+                        borderRadius:
+                        BorderRadius.circular(buttonRadius)),
+                    onPressed: onCancelButtonPressed ??
+                            () {
+                          Navigator.of(context).pop();
+                        },
+                    child: buttonCancelText ??
+                        Text(
+                          'Cancel',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                  )
                       : Container(),
                   RaisedButton(
                     color: buttonOkColor ?? Colors.green,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(buttonRadius)),
+                        borderRadius:
+                        BorderRadius.circular(buttonRadius)),
+                    onPressed: onOkButtonPressed ?? () {},
+                    child: buttonOkText ??
+                        Text(
+                          'OK',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                  ),
+                ],
+              )
+                  : Row(
+                mainAxisAlignment: !onlyOkButton
+                    ? MainAxisAlignment.spaceEvenly
+                    : MainAxisAlignment.center,
+                children: <Widget>[
+                  !onlyOkButton
+                      ? RaisedButton(
+                    color: buttonCancelColor ?? Colors.grey,
+                    shape: RoundedRectangleBorder(
+                        borderRadius:
+                        BorderRadius.circular(buttonRadius)),
+                    onPressed: onCancelButtonPressed,
+                    child: buttonCancelText ??
+                        Text(
+                          'Cancel',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                  )
+                      : Container(),
+                  RaisedButton(
+                    color: buttonOkColor ?? Colors.green,
+                    shape: RoundedRectangleBorder(
+                        borderRadius:
+                        BorderRadius.circular(buttonRadius)),
                     onPressed: onOkButtonPressed ?? () {},
                     child: buttonOkText ??
                         Text(
