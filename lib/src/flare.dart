@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flare_flutter/flare_actor.dart';
+import 'package:flutter/material.dart';
 
 class FlareGiffyDialog extends StatelessWidget {
   final String flarePath;
@@ -9,12 +9,15 @@ class FlareGiffyDialog extends StatelessWidget {
   final bool onlyOkButton;
   final Text buttonOkText;
   final Text buttonCancelText;
+  final bool verticalButtons;
   final Color buttonOkColor;
   final Color buttonCancelColor;
   final Color cardBackgroundColor;
   final double buttonRadius;
   final double cornerRadius;
   final VoidCallback onOkButtonPressed;
+  final VoidCallback onCancelButtonPressed;
+
 
   FlareGiffyDialog({
     Key key,
@@ -31,6 +34,8 @@ class FlareGiffyDialog extends StatelessWidget {
     this.buttonCancelColor,
     this.cornerRadius = 8.0,
     this.buttonRadius = 8.0,
+    this.verticalButtons = false,
+    this.onCancelButtonPressed,
   })  : assert(flarePath != null),
         assert(title != null),
         super(key: key);
@@ -41,7 +46,10 @@ class FlareGiffyDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(cornerRadius)),
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.6,
+        height: MediaQuery
+            .of(context)
+            .size
+            .height * 0.65,
         width: MediaQuery.of(context).size.width * 0.8,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -80,7 +88,43 @@ class FlareGiffyDialog extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Row(
+              child: verticalButtons
+                  ? Column(
+                mainAxisAlignment: !onlyOkButton
+                    ? MainAxisAlignment.spaceEvenly
+                    : MainAxisAlignment.center,
+                children: <Widget>[
+                  !onlyOkButton
+                      ? RaisedButton(
+                    color: buttonCancelColor ?? Colors.grey,
+                    shape: RoundedRectangleBorder(
+                        borderRadius:
+                        BorderRadius.circular(buttonRadius)),
+                    onPressed: onCancelButtonPressed ??
+                            () {
+                          Navigator.of(context).pop();
+                        },
+                    child: buttonCancelText ??
+                        Text(
+                          'Cancel',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                  )
+                      : Container(),
+                  RaisedButton(
+                    color: buttonOkColor ?? Colors.green,
+                    shape: RoundedRectangleBorder(
+                        borderRadius:
+                        BorderRadius.circular(buttonRadius)),
+                    onPressed: onOkButtonPressed ?? () {},
+                    child: buttonOkText ??
+                        Text(
+                          'OK',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                  ),
+                ],
+              ) : Row(
                 mainAxisAlignment: !onlyOkButton
                     ? MainAxisAlignment.spaceEvenly
                     : MainAxisAlignment.center,
