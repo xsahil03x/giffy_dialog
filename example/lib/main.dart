@@ -64,7 +64,11 @@ class MyHomePage extends StatelessWidget {
                               textAlign: TextAlign.center,
                             ),
                             onOkButtonPressed: () {},
-                          ));
+                        onCancelButtonPressed: () {
+                          Navigator.pop(context);
+                        },
+                        verticalButtons: true,
+                      ),);
                 }),
             RaisedButton(
                 key: keys[2],
@@ -93,7 +97,11 @@ class MyHomePage extends StatelessWidget {
                               style: TextStyle(),
                             ),
                             onOkButtonPressed: () {},
-                          ));
+                        onCancelButtonPressed: () {
+                          Navigator.pop(context);
+                        },
+                        verticalButtons: true,
+                      ),);
                 }),
             RaisedButton(
                 key: keys[4],
@@ -124,7 +132,11 @@ class MyHomePage extends StatelessWidget {
                               style: TextStyle(),
                             ),
                             onOkButtonPressed: () {},
-                          ));
+                        onCancelButtonPressed: () {
+                          Navigator.pop(context);
+                        },
+                        verticalButtons: true,
+                      ),);
                 }),
           ],
         ),
