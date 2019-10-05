@@ -29,7 +29,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Giffy Dialog Example'),
+        title: Text("Giffy Dialog Example"),
       ),
       body: Center(
         child: Column(
@@ -39,7 +39,7 @@ class MyHomePage extends StatelessWidget {
                 key: keys[0],
                 color: Colors.teal,
                 child: Text(
-                  'Network Giffy',
+                  "Network Giffy",
                   style: TextStyle(
                     color: Colors.white,
                   ),
