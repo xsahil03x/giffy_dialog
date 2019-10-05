@@ -39,7 +39,7 @@ class MyHomePage extends StatelessWidget {
                 key: keys[0],
                 color: Colors.teal,
                 child: Text(
-                  'Network Giffy',
+                  "Network Giffy",
                   style: TextStyle(
                     color: Colors.white,
                   ),
