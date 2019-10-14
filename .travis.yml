@@ -29,3 +29,7 @@ script:
   - ./../flutter/bin/cache/dart-sdk/bin/dartfmt --dry-run lib/
   - ./../flutter/bin/cache/dart-sdk/bin/dartfmt --dry-run test/
   - ./../flutter/bin/cache/dart-sdk/bin/dartfmt --dry-run example/lib/
+  - ./../flutter/bin/flutter test --no-test-assets --coverage
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
