@@ -24,7 +24,6 @@ before_script:
   - cd giffy_dialog/
 
 script:
-  - ./../flutter/bin/flutter test --no-test-assets
   - ./../flutter/bin/flutter analyze .
   - ./../flutter/bin/cache/dart-sdk/bin/dartfmt --dry-run lib/
   - ./../flutter/bin/cache/dart-sdk/bin/dartfmt --dry-run test/
