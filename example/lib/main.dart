@@ -29,7 +29,9 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Giffy Dialog Example"),
+        backgroundColor: Colors.teal.shade900,
+        centerTitle: true,
+        title: Text("Giffy Dialog Example",style: TextStyle(color: Colors.tealAccent),),
       ),
       body: Center(
         child: Column(
@@ -37,11 +39,12 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             RaisedButton(
                 key: keys[0],
-                color: Colors.teal,
+                color: Colors.teal.shade900,
+                //changed name from Network Giffy to High Data Consumption
                 child: Text(
-                  "Network Giffy",
+                  "High Data Consumption",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.tealAccent,
                   ),
                 ),
                 onPressed: () {
@@ -66,13 +69,14 @@ class MyHomePage extends StatelessWidget {
                             onOkButtonPressed: () {},
                           ));
                 }),
+            //changed name from Flare giffy to Destiny is near
             RaisedButton(
                 key: keys[2],
-                color: Colors.teal,
+                color: Colors.teal.shade900,
                 child: Text(
-                  'Flare Giffy',
+                  'Destiny is near',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.tealAccent,
                   ),
                 ),
                 onPressed: () {
@@ -97,11 +101,11 @@ class MyHomePage extends StatelessWidget {
                 }),
             RaisedButton(
                 key: keys[4],
-                color: Colors.teal,
+                color: Colors.teal.shade900,
                 child: Text(
-                  'Asset Giffy',
+                  'Wanna save it again',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.tealAccent,
                   ),
                 ),
                 onPressed: () {
