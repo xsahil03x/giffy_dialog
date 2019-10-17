@@ -1,11 +1,21 @@
-import 'package:flutter/services.dart';
+import 'dart:ui';
+
 import 'package:flutter_test/flutter_test.dart';
 import '../example/lib/main.dart';
 import 'package:image_test_utils/image_test_utils.dart';
 
+const double PORTRAIT_WIDTH = 600.0;
+const double PORTRAIT_HEIGHT = 800.0;
+const double LANDSCAPE_WIDTH = 800.0;
+const double LANDSCAPE_HEIGHT = 600.0;
+
 void main() {
   testWidgets('Check Portrait Dialog test', (WidgetTester tester) async {
     provideMockedNetworkImages(() async {
+      final TestWidgetsFlutterBinding binding =
+      TestWidgetsFlutterBinding.ensureInitialized();
+      await binding.setSurfaceSize(Size(PORTRAIT_WIDTH, PORTRAIT_HEIGHT));
+
       // Build our app and trigger a frame.
       await tester.pumpWidget(new MyApp());
 
@@ -40,13 +50,12 @@ void main() {
 
   testWidgets('Check Landscape Dialog test', (WidgetTester tester) async {
     provideMockedNetworkImages(() async {
+      final TestWidgetsFlutterBinding binding =
+      TestWidgetsFlutterBinding.ensureInitialized();
+      await binding.setSurfaceSize(Size(LANDSCAPE_WIDTH, LANDSCAPE_HEIGHT));
+
       // Build our app and trigger a frame.
       await tester.pumpWidget(new MyApp());
-
-      SystemChrome.setPreferredOrientations([
-        DeviceOrientation.landscapeRight,
-        DeviceOrientation.landscapeLeft,
-      ]);
 
       expect(find.byKey(keys[0]), findsOneWidget);
 
