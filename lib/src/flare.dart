@@ -33,12 +33,14 @@ class FlareGiffyDialog extends StatelessWidget {
     this.buttonRadius = 8.0,
   })  : assert(flarePath != null),
         assert(title != null),
+        assert(flareAnimation != null),
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(cornerRadius)),
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(cornerRadius)),
       child: (MediaQuery.of(context).orientation == Orientation.portrait)
           ? FlarePortraitMode(
               cardBackgroundColor: cardBackgroundColor,
@@ -122,7 +124,9 @@ class FlarePortraitMode extends StatelessWidget {
                   elevation: 0.0,
                   margin: EdgeInsets.all(0.0),
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(topRight: Radius.circular(cornerRadius), topLeft: Radius.circular(cornerRadius))),
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(cornerRadius),
+                          topLeft: Radius.circular(cornerRadius))),
                   clipBehavior: Clip.antiAlias,
                   child: FlareActor(
                     flarePath,
@@ -145,12 +149,15 @@ class FlarePortraitMode extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              mainAxisAlignment: !onlyOkButton ? MainAxisAlignment.spaceEvenly : MainAxisAlignment.center,
+              mainAxisAlignment: !onlyOkButton
+                  ? MainAxisAlignment.spaceEvenly
+                  : MainAxisAlignment.center,
               children: <Widget>[
                 !onlyOkButton
                     ? RaisedButton(
                         color: buttonCancelColor ?? Colors.grey,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(buttonRadius)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(buttonRadius)),
                         onPressed: () => Navigator.of(context).pop(),
                         child: buttonCancelText ??
                             Text(
@@ -161,7 +168,8 @@ class FlarePortraitMode extends StatelessWidget {
                     : Container(),
                 RaisedButton(
                   color: buttonOkColor ?? Colors.green,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(buttonRadius)),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(buttonRadius)),
                   onPressed: onOkButtonPressed ?? () {},
                   child: buttonOkText ??
                       Text(
@@ -226,7 +234,9 @@ class FlareLandscapeMode extends StatelessWidget {
               elevation: 0.0,
               margin: EdgeInsets.all(0.0),
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(cornerRadius), bottomLeft: Radius.circular(cornerRadius))),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(cornerRadius),
+                      bottomLeft: Radius.circular(cornerRadius))),
               clipBehavior: Clip.antiAlias,
               child: FlareActor(
                 flarePath,
@@ -251,12 +261,16 @@ class FlareLandscapeMode extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
-                    mainAxisAlignment: !onlyOkButton ? MainAxisAlignment.spaceEvenly : MainAxisAlignment.center,
+                    mainAxisAlignment: !onlyOkButton
+                        ? MainAxisAlignment.spaceEvenly
+                        : MainAxisAlignment.center,
                     children: <Widget>[
                       !onlyOkButton
                           ? RaisedButton(
                               color: buttonCancelColor ?? Colors.grey,
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(buttonRadius)),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.circular(buttonRadius)),
                               onPressed: () => Navigator.of(context).pop(),
                               child: buttonCancelText ??
                                   Text(
@@ -267,7 +281,8 @@ class FlareLandscapeMode extends StatelessWidget {
                           : Container(),
                       RaisedButton(
                         color: buttonOkColor ?? Colors.green,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(buttonRadius)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(buttonRadius)),
                         onPressed: onOkButtonPressed ?? () {},
                         child: buttonOkText ??
                             Text(
