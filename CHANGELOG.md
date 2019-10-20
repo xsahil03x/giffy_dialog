@@ -1,3 +1,11 @@
+1.4.0
+
+    Added Landscape dialogs and reduced code size.
+    
+1.3.0
+    
+    Remove dependency from cached_network_image (More Generic).
+
 1.2.0
 
     Add widget tests and description.
