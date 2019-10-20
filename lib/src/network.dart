@@ -36,7 +36,6 @@ class NetworkGiffyDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return BaseGiffyDialog(
       imageWidget: image,
-
       cornerRadius: cornerRadius,
       title: title,
       description: description,

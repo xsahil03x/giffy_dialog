@@ -33,8 +33,7 @@ class FlareGiffyDialog extends StatelessWidget {
     this.buttonCancelColor,
     this.cornerRadius = 8.0,
     this.buttonRadius = 8.0,
-  })
-      : assert(flarePath != null),
+  })  : assert(flarePath != null),
         assert(title != null),
         assert(flareAnimation != null),
         super(key: key);
@@ -49,7 +48,6 @@ class FlareGiffyDialog extends StatelessWidget {
     );
     return BaseGiffyDialog(
       imageWidget: imageWidget,
-
       cornerRadius: cornerRadius,
       title: title,
       description: description,

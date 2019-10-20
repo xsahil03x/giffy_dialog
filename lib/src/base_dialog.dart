@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class BaseGiffyDialog extends StatelessWidget {
-
   final Widget imageWidget;
   final Text title;
   final Text description;
@@ -27,8 +26,7 @@ class BaseGiffyDialog extends StatelessWidget {
     this.buttonCancelColor,
     this.cornerRadius = 8.0,
     this.buttonRadius = 8.0,
-  })
-      : assert(imageWidget != null),
+  })  : assert(imageWidget != null),
         assert(title != null),
         super(key: key);
 
@@ -38,12 +36,11 @@ class BaseGiffyDialog extends StatelessWidget {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(cornerRadius)),
         child: MediaQuery.of(context).orientation == Orientation.portrait
-        ? _buildPortraitWidget(context, imageWidget)
-        : _buildLandscapeWidget(context, imageWidget)
-    );
+            ? _buildPortraitWidget(context, imageWidget)
+            : _buildLandscapeWidget(context, imageWidget));
   }
 
-  Widget _buildPortraitWidget(BuildContext context,Widget imageWidget){
+  Widget _buildPortraitWidget(BuildContext context, Widget imageWidget) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.6,
       width: MediaQuery.of(context).size.width * 0.8,
@@ -59,7 +56,9 @@ class BaseGiffyDialog extends StatelessWidget {
                   elevation: 0.0,
                   margin: EdgeInsets.all(0.0),
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(topRight: Radius.circular(cornerRadius), topLeft: Radius.circular(cornerRadius))),
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(cornerRadius),
+                          topLeft: Radius.circular(cornerRadius))),
                   clipBehavior: Clip.antiAlias,
                   child: imageWidget,
                 ),
@@ -80,7 +79,7 @@ class BaseGiffyDialog extends StatelessWidget {
     );
   }
 
-  Widget _buildLandscapeWidget(BuildContext context,Widget imageWidget) {
+  Widget _buildLandscapeWidget(BuildContext context, Widget imageWidget) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.6,
       width: MediaQuery.of(context).size.width * 0.8,
@@ -94,7 +93,9 @@ class BaseGiffyDialog extends StatelessWidget {
               elevation: 0.0,
               margin: EdgeInsets.all(0.0),
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(cornerRadius), bottomLeft: Radius.circular(cornerRadius))),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(cornerRadius),
+                      bottomLeft: Radius.circular(cornerRadius))),
               clipBehavior: Clip.antiAlias,
               child: imageWidget,
             ),
@@ -124,21 +125,22 @@ class BaseGiffyDialog extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
-        mainAxisAlignment: !onlyOkButton ? MainAxisAlignment
-            .spaceEvenly : MainAxisAlignment.center,
+        mainAxisAlignment: !onlyOkButton
+            ? MainAxisAlignment.spaceEvenly
+            : MainAxisAlignment.center,
         children: <Widget>[
           !onlyOkButton
               ? RaisedButton(
-            color: buttonCancelColor ?? Colors.grey,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(buttonRadius)),
-            onPressed: () => Navigator.of(context).pop(),
-            child: buttonCancelText ??
-                Text(
-                  'Cancel',
-                  style: TextStyle(color: Colors.white),
-                ),
-          )
+                  color: buttonCancelColor ?? Colors.grey,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(buttonRadius)),
+                  onPressed: () => Navigator.of(context).pop(),
+                  child: buttonCancelText ??
+                      Text(
+                        'Cancel',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                )
               : Container(),
           RaisedButton(
             color: buttonOkColor ?? Colors.green,
@@ -155,7 +157,6 @@ class BaseGiffyDialog extends StatelessWidget {
       ),
     );
   }
-
 }
 
 class AssetPortraitMode extends StatelessWidget {
@@ -203,7 +204,9 @@ class AssetPortraitMode extends StatelessWidget {
                   elevation: 0.0,
                   margin: EdgeInsets.all(0.0),
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(topRight: Radius.circular(cornerRadius), topLeft: Radius.circular(cornerRadius))),
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(cornerRadius),
+                          topLeft: Radius.circular(cornerRadius))),
                   clipBehavior: Clip.antiAlias,
                   child: image,
                 ),
@@ -221,23 +224,27 @@ class AssetPortraitMode extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              mainAxisAlignment: !onlyOkButton ? MainAxisAlignment.spaceEvenly : MainAxisAlignment.center,
+              mainAxisAlignment: !onlyOkButton
+                  ? MainAxisAlignment.spaceEvenly
+                  : MainAxisAlignment.center,
               children: <Widget>[
                 !onlyOkButton
                     ? RaisedButton(
-                  color: buttonCancelColor ?? Colors.grey,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(buttonRadius)),
-                  onPressed: () => Navigator.of(context).pop(),
-                  child: buttonCancelText ??
-                      Text(
-                        'Cancel',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                )
+                        color: buttonCancelColor ?? Colors.grey,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(buttonRadius)),
+                        onPressed: () => Navigator.of(context).pop(),
+                        child: buttonCancelText ??
+                            Text(
+                              'Cancel',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                      )
                     : Container(),
                 RaisedButton(
                   color: buttonOkColor ?? Colors.green,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(buttonRadius)),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(buttonRadius)),
                   onPressed: onOkButtonPressed ?? () {},
                   child: buttonOkText ??
                       Text(
@@ -285,26 +292,14 @@ class AssetLandscapeMode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery
-          .of(context)
-          .size
-          .height * 0.6,
-      width: MediaQuery
-          .of(context)
-          .size
-          .width * 0.8,
+      height: MediaQuery.of(context).size.height * 0.6,
+      width: MediaQuery.of(context).size.width * 0.8,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Container(
-            width: (MediaQuery
-                .of(context)
-                .size
-                .width / 2) * 0.6,
-            height: MediaQuery
-                .of(context)
-                .size
-                .height * 0.8,
+            width: (MediaQuery.of(context).size.width / 2) * 0.6,
+            height: MediaQuery.of(context).size.height * 0.8,
             child: Card(
               elevation: 0.0,
               margin: EdgeInsets.all(0.0),
@@ -331,21 +326,23 @@ class AssetLandscapeMode extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
-                    mainAxisAlignment: !onlyOkButton ? MainAxisAlignment
-                        .spaceEvenly : MainAxisAlignment.center,
+                    mainAxisAlignment: !onlyOkButton
+                        ? MainAxisAlignment.spaceEvenly
+                        : MainAxisAlignment.center,
                     children: <Widget>[
                       !onlyOkButton
                           ? RaisedButton(
-                        color: buttonCancelColor ?? Colors.grey,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(buttonRadius)),
-                        onPressed: () => Navigator.of(context).pop(),
-                        child: buttonCancelText ??
-                            Text(
-                              'Cancel',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                      )
+                              color: buttonCancelColor ?? Colors.grey,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.circular(buttonRadius)),
+                              onPressed: () => Navigator.of(context).pop(),
+                              child: buttonCancelText ??
+                                  Text(
+                                    'Cancel',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                            )
                           : Container(),
                       RaisedButton(
                         color: buttonOkColor ?? Colors.green,

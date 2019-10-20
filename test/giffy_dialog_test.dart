@@ -14,55 +14,55 @@ void main() {
   group('Dialog Assertion Test', () {
     testWidgets(
         'AssetGiffyDialog throws if initialized with null image and title',
-            (WidgetTester tester) async {
-          try {
-            await tester.pumpWidget(AssetGiffyDialog(
-              onOkButtonPressed: () {},
-              image: null,
-              title: null,
-            ));
-          } catch (error) {
-            expect(error, isAssertionError);
-          }
-        });
+        (WidgetTester tester) async {
+      try {
+        await tester.pumpWidget(AssetGiffyDialog(
+          onOkButtonPressed: () {},
+          image: null,
+          title: null,
+        ));
+      } catch (error) {
+        expect(error, isAssertionError);
+      }
+    });
 
     testWidgets(
         'FlareGiffyDialog throws if initialized with null flarePath, flareAnimation and title',
-            (WidgetTester tester) async {
-          try {
-            await tester.pumpWidget(FlareGiffyDialog(
-              onOkButtonPressed: () {},
-              flarePath: null,
-              title: null,
-              flareAnimation: null,
-            ));
-          } catch (error) {
-            expect(error, isAssertionError);
-          }
-        });
+        (WidgetTester tester) async {
+      try {
+        await tester.pumpWidget(FlareGiffyDialog(
+          onOkButtonPressed: () {},
+          flarePath: null,
+          title: null,
+          flareAnimation: null,
+        ));
+      } catch (error) {
+        expect(error, isAssertionError);
+      }
+    });
 
     testWidgets(
         'NetworkGiffyDialog throws if initialized with null image and title',
-            (WidgetTester tester) async {
-          try {
-            await tester.pumpWidget(NetworkGiffyDialog(
-              onOkButtonPressed: () {},
-              image: null,
-              title: null,
-            ));
-          } catch (error) {
-            expect(error, isAssertionError);
-          }
-        });
+        (WidgetTester tester) async {
+      try {
+        await tester.pumpWidget(NetworkGiffyDialog(
+          onOkButtonPressed: () {},
+          image: null,
+          title: null,
+        ));
+      } catch (error) {
+        expect(error, isAssertionError);
+      }
+    });
   });
 
   group('Dialog Smoke and Orientation Test', () {
     testWidgets('Check Portrait Dialog test', (WidgetTester tester) async {
       provideMockedNetworkImages(() async {
         final TestWidgetsFlutterBinding binding =
-        TestWidgetsFlutterBinding.ensureInitialized();
+            TestWidgetsFlutterBinding.ensureInitialized();
         binding.window.physicalSizeTestValue =
-        (Size(PORTRAIT_WIDTH, PORTRAIT_HEIGHT));
+            (Size(PORTRAIT_WIDTH, PORTRAIT_HEIGHT));
 
         // Build our app and trigger a frame.
         await tester.pumpWidget(new MyApp());
@@ -99,7 +99,7 @@ void main() {
     testWidgets('Check Landscape Dialog test', (WidgetTester tester) async {
       provideMockedNetworkImages(() async {
         final TestWidgetsFlutterBinding binding =
-        TestWidgetsFlutterBinding.ensureInitialized();
+            TestWidgetsFlutterBinding.ensureInitialized();
         binding.window.physicalSizeTestValue =
             Size(LANDSCAPE_WIDTH, LANDSCAPE_HEIGHT);
 
