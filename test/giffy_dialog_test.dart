@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:giffy_dialog/giffy_dialog.dart';
 import '../example/lib/main.dart';
@@ -12,13 +13,25 @@ const double LANDSCAPE_HEIGHT = 1800.0;
 
 void main() {
   group('Dialog Assertion Test', () {
-    testWidgets(
-        'AssetGiffyDialog throws if initialized with null image and title',
+    testWidgets('AssetGiffyDialog throws if initialized with null image',
         (WidgetTester tester) async {
       try {
         await tester.pumpWidget(AssetGiffyDialog(
           onOkButtonPressed: () {},
+          title: Text(''),
           image: null,
+        ));
+      } catch (error) {
+        expect(error, isAssertionError);
+      }
+    });
+
+    testWidgets('AssetGiffyDialog throws if initialized with null title',
+        (WidgetTester tester) async {
+      try {
+        await tester.pumpWidget(AssetGiffyDialog(
+          onOkButtonPressed: () {},
+          image: Image.asset('assets/men_wearing_jacket.gif'),
           title: null,
         ));
       } catch (error) {
@@ -27,14 +40,14 @@ void main() {
     });
 
     testWidgets(
-        'FlareGiffyDialog throws if initialized with null flarePath, flareAnimation and title',
+        'FlareGiffyDialog throws if initialized with null flarePath',
         (WidgetTester tester) async {
       try {
         await tester.pumpWidget(FlareGiffyDialog(
           onOkButtonPressed: () {},
+          title: Text(''),
+          flareAnimation: '',
           flarePath: null,
-          title: null,
-          flareAnimation: null,
         ));
       } catch (error) {
         expect(error, isAssertionError);
@@ -42,12 +55,56 @@ void main() {
     });
 
     testWidgets(
-        'NetworkGiffyDialog throws if initialized with null image and title',
+        'FlareGiffyDialog throws if initialized with null flareAnimation',
+            (WidgetTester tester) async {
+          try {
+            await tester.pumpWidget(FlareGiffyDialog(
+              onOkButtonPressed: () {},
+              flarePath: 'assets/space_demo.flr',
+              title: Text('loading'),
+              flareAnimation: null,
+            ));
+          } catch (error) {
+            expect(error, isAssertionError);
+          }
+        });
+
+    testWidgets(
+        'FlareGiffyDialog throws if initialized with null title',
+            (WidgetTester tester) async {
+          try {
+            await tester.pumpWidget(FlareGiffyDialog(
+              onOkButtonPressed: () {},
+              flarePath: 'assets/space_demo.flr',
+              flareAnimation: 'loading',
+              title: null,
+            ));
+          } catch (error) {
+            expect(error, isAssertionError);
+          }
+        });
+
+    testWidgets('NetworkGiffyDialog throws if initialized with null image',
         (WidgetTester tester) async {
       try {
         await tester.pumpWidget(NetworkGiffyDialog(
           onOkButtonPressed: () {},
+          title: Text(''),
           image: null,
+        ));
+      } catch (error) {
+        expect(error, isAssertionError);
+      }
+    });
+
+    testWidgets('NetworkGiffyDialog throws if initialized with null title',
+        (WidgetTester tester) async {
+      try {
+        await tester.pumpWidget(NetworkGiffyDialog(
+          onOkButtonPressed: () {},
+          image: Image.network(
+            "https://raw.githubusercontent.com/Shashank02051997/FancyGifDialog-Android/master/GIF's/gif14.gif",
+          ),
           title: null,
         ));
       } catch (error) {
