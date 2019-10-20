@@ -1,6 +1,21 @@
 import 'package:flutter/material.dart';
 
 class BaseGiffyDialog extends StatelessWidget {
+  BaseGiffyDialog({
+    Key key,
+    @required this.imageWidget,
+    @required this.title,
+    @required this.onOkButtonPressed,
+    @required this.description,
+    @required this.onlyOkButton,
+    @required this.buttonOkText,
+    @required this.buttonCancelText,
+    @required this.buttonOkColor,
+    @required this.buttonCancelColor,
+    @required this.cornerRadius,
+    @required this.buttonRadius,
+  }) : super(key: key);
+
   final Widget imageWidget;
   final Text title;
   final Text description;
@@ -13,67 +28,37 @@ class BaseGiffyDialog extends StatelessWidget {
   final double cornerRadius;
   final VoidCallback onOkButtonPressed;
 
-  BaseGiffyDialog({
-    Key key,
-    @required this.imageWidget,
-    @required this.title,
-    @required this.onOkButtonPressed,
-    this.description,
-    this.onlyOkButton = false,
-    this.buttonOkText,
-    this.buttonCancelText,
-    this.buttonOkColor,
-    this.buttonCancelColor,
-    this.cornerRadius = 8.0,
-    this.buttonRadius = 8.0,
-  })  : assert(imageWidget != null),
-        assert(title != null),
-        super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Dialog(
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(cornerRadius)),
-        child: MediaQuery.of(context).orientation == Orientation.portrait
-            ? _buildPortraitWidget(context, imageWidget)
-            : _buildLandscapeWidget(context, imageWidget));
-  }
-
   Widget _buildPortraitWidget(BuildContext context, Widget imageWidget) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.6,
       width: MediaQuery.of(context).size.width * 0.8,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Column(
-            children: <Widget>[
-              Container(
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: (MediaQuery.of(context).size.height / 2) * 0.6,
-                child: Card(
-                  elevation: 0.0,
-                  margin: EdgeInsets.all(0.0),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(cornerRadius),
-                          topLeft: Radius.circular(cornerRadius))),
-                  clipBehavior: Clip.antiAlias,
-                  child: imageWidget,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: title,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: description,
-              ),
-            ],
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(cornerRadius),
+                  topLeft: Radius.circular(cornerRadius)),
+              child: imageWidget,
+            ),
           ),
-          _buildButtonsBar(context)
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(top: 16.0),
+                  child: title,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: description,
+                ),
+                _buildButtonsBar(context)
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -82,21 +67,16 @@ class BaseGiffyDialog extends StatelessWidget {
   Widget _buildLandscapeWidget(BuildContext context, Widget imageWidget) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.6,
-      width: MediaQuery.of(context).size.width * 0.8,
+      width: MediaQuery.of(context).size.width * 0.6,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Container(
-            width: (MediaQuery.of(context).size.width / 2) * 0.6,
-            height: MediaQuery.of(context).size.height * 0.8,
-            child: Card(
-              elevation: 0.0,
-              margin: EdgeInsets.all(0.0),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(cornerRadius),
-                      bottomLeft: Radius.circular(cornerRadius))),
-              clipBehavior: Clip.antiAlias,
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(cornerRadius),
+                  bottomLeft: Radius.circular(cornerRadius)),
               child: imageWidget,
             ),
           ),
@@ -129,24 +109,24 @@ class BaseGiffyDialog extends StatelessWidget {
             ? MainAxisAlignment.spaceEvenly
             : MainAxisAlignment.center,
         children: <Widget>[
-          !onlyOkButton
-              ? RaisedButton(
-                  color: buttonCancelColor ?? Colors.grey,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(buttonRadius)),
-                  onPressed: () => Navigator.of(context).pop(),
-                  child: buttonCancelText ??
-                      Text(
-                        'Cancel',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                )
-              : Container(),
+          if (!onlyOkButton) ...[
+            RaisedButton(
+              color: buttonCancelColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(buttonRadius)),
+              onPressed: () => Navigator.of(context).pop(),
+              child: buttonCancelText ??
+                  Text(
+                    'Cancel',
+                    style: TextStyle(color: Colors.white),
+                  ),
+            )
+          ],
           RaisedButton(
-            color: buttonOkColor ?? Colors.green,
+            color: buttonOkColor,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(buttonRadius)),
-            onPressed: onOkButtonPressed ?? () {},
+            onPressed: onOkButtonPressed,
             child: buttonOkText ??
                 Text(
                   'OK',
@@ -157,212 +137,14 @@ class BaseGiffyDialog extends StatelessWidget {
       ),
     );
   }
-}
-
-class AssetPortraitMode extends StatelessWidget {
-  const AssetPortraitMode({
-    Key key,
-    @required this.cornerRadius,
-    @required this.image,
-    @required this.title,
-    @required this.description,
-    @required this.onlyOkButton,
-    @required this.buttonCancelColor,
-    @required this.buttonRadius,
-    @required this.buttonCancelText,
-    @required this.buttonOkColor,
-    @required this.onOkButtonPressed,
-    @required this.buttonOkText,
-  }) : super(key: key);
-
-  final double cornerRadius;
-  final Image image;
-  final Text title;
-  final Text description;
-  final bool onlyOkButton;
-  final Color buttonCancelColor;
-  final double buttonRadius;
-  final Text buttonCancelText;
-  final Color buttonOkColor;
-  final Function onOkButtonPressed;
-  final Text buttonOkText;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.6,
-      width: MediaQuery.of(context).size.width * 0.8,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Column(
-            children: <Widget>[
-              Container(
-                width: MediaQuery.of(context).size.width * 0.8,
-                height: (MediaQuery.of(context).size.height / 2) * 0.6,
-                child: Card(
-                  elevation: 0.0,
-                  margin: EdgeInsets.all(0.0),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(cornerRadius),
-                          topLeft: Radius.circular(cornerRadius))),
-                  clipBehavior: Clip.antiAlias,
-                  child: image,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: title,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: description,
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: !onlyOkButton
-                  ? MainAxisAlignment.spaceEvenly
-                  : MainAxisAlignment.center,
-              children: <Widget>[
-                !onlyOkButton
-                    ? RaisedButton(
-                        color: buttonCancelColor ?? Colors.grey,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(buttonRadius)),
-                        onPressed: () => Navigator.of(context).pop(),
-                        child: buttonCancelText ??
-                            Text(
-                              'Cancel',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                      )
-                    : Container(),
-                RaisedButton(
-                  color: buttonOkColor ?? Colors.green,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(buttonRadius)),
-                  onPressed: onOkButtonPressed ?? () {},
-                  child: buttonOkText ??
-                      Text(
-                        'OK',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class AssetLandscapeMode extends StatelessWidget {
-  const AssetLandscapeMode({
-    Key key,
-    @required this.cornerRadius,
-    @required this.image,
-    @required this.title,
-    @required this.description,
-    @required this.onlyOkButton,
-    @required this.buttonCancelColor,
-    @required this.buttonRadius,
-    @required this.buttonCancelText,
-    @required this.buttonOkColor,
-    @required this.onOkButtonPressed,
-    @required this.buttonOkText,
-  }) : super(key: key);
-
-  final double cornerRadius;
-  final Image image;
-  final Text title;
-  final Text description;
-  final bool onlyOkButton;
-  final Color buttonCancelColor;
-  final double buttonRadius;
-  final Text buttonCancelText;
-  final Color buttonOkColor;
-  final Function onOkButtonPressed;
-  final Text buttonOkText;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.6,
-      width: MediaQuery.of(context).size.width * 0.8,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Container(
-            width: (MediaQuery.of(context).size.width / 2) * 0.6,
-            height: MediaQuery.of(context).size.height * 0.8,
-            child: Card(
-              elevation: 0.0,
-              margin: EdgeInsets.all(0.0),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(cornerRadius),
-                      bottomLeft: Radius.circular(cornerRadius))),
-              clipBehavior: Clip.antiAlias,
-              child: image,
-            ),
-          ),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 16.0),
-                  child: title,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: description,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: !onlyOkButton
-                        ? MainAxisAlignment.spaceEvenly
-                        : MainAxisAlignment.center,
-                    children: <Widget>[
-                      !onlyOkButton
-                          ? RaisedButton(
-                              color: buttonCancelColor ?? Colors.grey,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.circular(buttonRadius)),
-                              onPressed: () => Navigator.of(context).pop(),
-                              child: buttonCancelText ??
-                                  Text(
-                                    'Cancel',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                            )
-                          : Container(),
-                      RaisedButton(
-                        color: buttonOkColor ?? Colors.green,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(buttonRadius)),
-                        onPressed: onOkButtonPressed ?? () {},
-                        child: buttonOkText ??
-                            Text(
-                              'OK',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+    return Dialog(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(cornerRadius)),
+        child: MediaQuery.of(context).orientation == Orientation.portrait
+            ? _buildPortraitWidget(context, imageWidget)
+            : _buildLandscapeWidget(context, imageWidget));
   }
 }

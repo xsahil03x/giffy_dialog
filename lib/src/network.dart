@@ -3,6 +3,23 @@ import 'package:flutter/material.dart';
 import 'base_dialog.dart';
 
 class NetworkGiffyDialog extends StatelessWidget {
+  NetworkGiffyDialog({
+    Key key,
+    @required this.image,
+    @required this.title,
+    @required this.onOkButtonPressed,
+    this.description,
+    this.onlyOkButton = false,
+    this.buttonOkText,
+    this.buttonCancelText,
+    this.buttonOkColor = Colors.green,
+    this.buttonCancelColor = Colors.grey,
+    this.cornerRadius = 8.0,
+    this.buttonRadius = 8.0,
+  })  : assert(image != null),
+        assert(title != null),
+        super(key: key);
+
   final Widget image;
   final Text title;
   final Text description;
@@ -14,23 +31,6 @@ class NetworkGiffyDialog extends StatelessWidget {
   final double buttonRadius;
   final double cornerRadius;
   final VoidCallback onOkButtonPressed;
-
-  NetworkGiffyDialog({
-    Key key,
-    @required this.image,
-    @required this.title,
-    @required this.onOkButtonPressed,
-    this.description,
-    this.onlyOkButton = false,
-    this.buttonOkText,
-    this.buttonCancelText,
-    this.buttonOkColor,
-    this.buttonCancelColor,
-    this.cornerRadius = 8.0,
-    this.buttonRadius = 8.0,
-  })  : assert(image != null),
-        assert(title != null),
-        super(key: key);
 
   @override
   Widget build(BuildContext context) {

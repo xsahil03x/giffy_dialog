@@ -4,6 +4,26 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'base_dialog.dart';
 
 class FlareGiffyDialog extends StatelessWidget {
+  FlareGiffyDialog({
+    Key key,
+    @required this.flarePath,
+    @required this.flareAnimation,
+    @required this.title,
+    @required this.onOkButtonPressed,
+    this.description,
+    this.onlyOkButton = false,
+    this.buttonOkText,
+    this.buttonCancelText,
+    this.cardBackgroundColor,
+    this.buttonOkColor = Colors.green,
+    this.buttonCancelColor = Colors.grey,
+    this.cornerRadius = 8.0,
+    this.buttonRadius = 8.0,
+  })  : assert(flarePath != null),
+        assert(title != null),
+        assert(flareAnimation != null),
+        super(key: key);
+
   final String flarePath;
   final String flareAnimation;
   final Text title;
@@ -17,26 +37,6 @@ class FlareGiffyDialog extends StatelessWidget {
   final double buttonRadius;
   final double cornerRadius;
   final VoidCallback onOkButtonPressed;
-
-  FlareGiffyDialog({
-    Key key,
-    @required this.flarePath,
-    @required this.flareAnimation,
-    @required this.title,
-    @required this.onOkButtonPressed,
-    this.description,
-    this.onlyOkButton = false,
-    this.buttonOkText,
-    this.buttonCancelText,
-    this.cardBackgroundColor,
-    this.buttonOkColor,
-    this.buttonCancelColor,
-    this.cornerRadius = 8.0,
-    this.buttonRadius = 8.0,
-  })  : assert(flarePath != null),
-        assert(title != null),
-        assert(flareAnimation != null),
-        super(key: key);
 
   @override
   Widget build(BuildContext context) {
