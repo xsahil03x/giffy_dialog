@@ -1,3 +1,13 @@
+1.5.0
+
+    Added Entry Animation for dialogs.
+    
+    1: DEFAULT,
+    2: LEFT_RIGHT,
+    3: RIGHT_LEFT,
+    4: TOP_BOTTOM,
+    5: BOTTOM_TOP,
+
 1.4.0
 
     Added Landscape dialogs and reduced code size.
