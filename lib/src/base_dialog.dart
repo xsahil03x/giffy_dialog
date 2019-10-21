@@ -128,7 +128,6 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
   }
 
   Widget _buildLandscapeWidget(BuildContext context, Widget imageWidget) {
-    final animationAxis = _animationAxis;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
