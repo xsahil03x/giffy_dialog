@@ -55,6 +55,7 @@ onPressed: () {
           This library helps you easily create fancy giffy dialog',
           textAlign: TextAlign.center,
         ),
+    entryAnimation: EntryAnimation.BOTTOM_TOP,
     onOkButtonPressed: () {},
   ) );
 }
@@ -79,6 +80,7 @@ onPressed: () {
           textAlign: TextAlign.center,
           style: TextStyle(),
         ),
+    entryAnimation: EntryAnimation.DEFAULT,
     onOkButtonPressed: () {},
   ) );
 }
@@ -102,6 +104,7 @@ onPressed: () {
           textAlign: TextAlign.center,
           style: TextStyle(),
         ),
+    entryAnimation: EntryAnimation.RIGHT_LEFT,
     onOkButtonPressed: () {},
   ) );
 }
