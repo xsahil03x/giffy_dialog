@@ -120,7 +120,7 @@ class MyHomePage extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 22.0, fontWeight: FontWeight.w600),
                             ),
-                            entryAnimation: EntryAnimation.RIGHT_LEFT,
+                            entryAnimation: EntryAnimation.LEFT_RIGHT,
                             description: Text(
                               'This is a men wearing jackets dialog box. This library helps you easily create fancy giffy dialog.',
                               textAlign: TextAlign.center,
