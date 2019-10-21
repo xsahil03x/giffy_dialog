@@ -16,6 +16,7 @@ class NetworkGiffyDialog extends StatelessWidget {
     this.buttonCancelColor = Colors.grey,
     this.cornerRadius = 8.0,
     this.buttonRadius = 8.0,
+    this.entryAnimation = EntryAnimation.DEFAULT,
   })  : assert(image != null),
         assert(title != null),
         super(key: key);
@@ -31,6 +32,7 @@ class NetworkGiffyDialog extends StatelessWidget {
   final double buttonRadius;
   final double cornerRadius;
   final VoidCallback onOkButtonPressed;
+  final EntryAnimation entryAnimation;
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +48,7 @@ class NetworkGiffyDialog extends StatelessWidget {
       buttonOkColor: buttonOkColor,
       onOkButtonPressed: onOkButtonPressed,
       buttonOkText: buttonOkText,
+      entryAnimation: entryAnimation,
     );
   }
 }
