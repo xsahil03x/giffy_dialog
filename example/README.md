@@ -14,6 +14,8 @@ The source code is **100% Dart**, and everything resides in the [/lib](https://g
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/MIT)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/xsahil03x/giffy_dialog/blob/master/LICENSE)
+[![Build Status](https://travis-ci.com/xsahil03x/giffy_dialog.svg?branch=master)](https://travis-ci.com/xsahil03x/giffy_dialog)
+[![CodeCov](https://codecov.io/gh/xsahil03x/giffy_dialog/branch/master/graph/badge.svg)](https://codecov.io/gh/xsahil03x/giffy_dialog)
 
 # 💻 Installation
 In the `dependencies:` section of your `pubspec.yaml`, add the following line:
@@ -53,6 +55,7 @@ onPressed: () {
           This library helps you easily create fancy giffy dialog',
           textAlign: TextAlign.center,
         ),
+    entryAnimation: EntryAnimation.BOTTOM_TOP,
     onOkButtonPressed: () {},
   ) );
 }
@@ -77,6 +80,7 @@ onPressed: () {
           textAlign: TextAlign.center,
           style: TextStyle(),
         ),
+    entryAnimation: EntryAnimation.DEFAULT,
     onOkButtonPressed: () {},
   ) );
 }
@@ -89,7 +93,7 @@ onPressed: () {
 ```dart
 onPressed: () {
   showDialog(
-  context: context,builder: (_) => NetworkGiffyDialog(
+  context: context,builder: (_) => AssetGiffyDialog(
     imagePath: 'assets/men_wearing_jacket.gif',
     title: Text('Men Wearing Jackets',
             style: TextStyle(
@@ -100,6 +104,7 @@ onPressed: () {
           textAlign: TextAlign.center,
           style: TextStyle(),
         ),
+    entryAnimation: EntryAnimation.RIGHT_LEFT,
     onOkButtonPressed: () {},
   ) );
 }
