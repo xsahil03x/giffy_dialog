@@ -19,6 +19,7 @@ class FlareGiffyDialog extends StatelessWidget {
     this.buttonCancelColor = Colors.grey,
     this.cornerRadius = 8.0,
     this.buttonRadius = 8.0,
+    this.entryAnimation = EntryAnimation.DEFAULT,
   })  : assert(flarePath != null),
         assert(title != null),
         assert(flareAnimation != null),
@@ -37,6 +38,7 @@ class FlareGiffyDialog extends StatelessWidget {
   final double buttonRadius;
   final double cornerRadius;
   final VoidCallback onOkButtonPressed;
+  final EntryAnimation entryAnimation;
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +60,7 @@ class FlareGiffyDialog extends StatelessWidget {
       buttonOkColor: buttonOkColor,
       onOkButtonPressed: onOkButtonPressed,
       buttonOkText: buttonOkText,
+      entryAnimation: entryAnimation,
     );
   }
 }
