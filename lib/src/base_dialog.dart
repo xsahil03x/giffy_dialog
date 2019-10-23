@@ -84,7 +84,11 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
           parent: _animationController,
           curve: Curves.easeIn,
         ),
-      )..addListener(() => setState(() {}));
+      )..addListener(
+          () => setState(
+            () {},
+          ),
+        );
       _animationController.forward();
     }
   }
@@ -102,8 +106,9 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
         Expanded(
           child: ClipRRect(
             borderRadius: BorderRadius.only(
-                topRight: Radius.circular(widget.cornerRadius),
-                topLeft: Radius.circular(widget.cornerRadius)),
+              topRight: Radius.circular(widget.cornerRadius),
+              topLeft: Radius.circular(widget.cornerRadius),
+            ),
             child: imageWidget,
           ),
         ),
@@ -135,8 +140,9 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
         Expanded(
           child: ClipRRect(
             borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(widget.cornerRadius),
-                bottomLeft: Radius.circular(widget.cornerRadius)),
+              topLeft: Radius.circular(widget.cornerRadius),
+              bottomLeft: Radius.circular(widget.cornerRadius),
+            ),
             child: imageWidget,
           ),
         ),
@@ -172,7 +178,8 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
             RaisedButton(
               color: widget.buttonCancelColor,
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(widget.buttonRadius)),
+                borderRadius: BorderRadius.circular(widget.buttonRadius),
+              ),
               onPressed: () => Navigator.of(context).pop(),
               child: widget.buttonCancelText ??
                   Text(
@@ -184,7 +191,8 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
           RaisedButton(
             color: widget.buttonOkColor,
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(widget.buttonRadius)),
+              borderRadius: BorderRadius.circular(widget.buttonRadius),
+            ),
             onPressed: widget.onOkButtonPressed,
             child: widget.buttonOkText ??
                 Text(
@@ -219,7 +227,8 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
         child: Material(
           type: MaterialType.card,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(widget.cornerRadius)),
+            borderRadius: BorderRadius.circular(widget.cornerRadius),
+          ),
           elevation: Theme.of(context).dialogTheme.elevation ?? 24.0,
           child: isPortrait
               ? _buildPortraitWidget(context, widget.imageWidget)

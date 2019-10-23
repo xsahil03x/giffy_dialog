@@ -43,8 +43,8 @@ flutter:
   #  - images/a_dot_ham.jpeg
 
   assets:
-  - assets/men_wearing_jacket.gif
-  - assets/space_demo.flr
+    - assets/men_wearing_jacket.gif
+    - assets/space_demo.flr
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
@@ -70,10 +70,10 @@ flutter:
   #         weight: 700
   #
   fonts:
-  - family: Nunito
-    fonts:
-    - asset: assets/nunitoSemiBold.ttf
-    - asset: assets/nunitoBold.ttf
-      weight: 700
+    - family: Nunito
+      fonts:
+        - asset: assets/nunitoSemiBold.ttf
+        - asset: assets/nunitoBold.ttf
+          weight: 700
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages
