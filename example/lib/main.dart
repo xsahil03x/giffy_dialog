@@ -85,6 +85,7 @@ class MyHomePage extends StatelessWidget {
                             flareAnimation: 'loading',
                             title: Text(
                               'Space Reloading',
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 22.0, fontWeight: FontWeight.w600),
                             ),
@@ -117,6 +118,7 @@ class MyHomePage extends StatelessWidget {
                             ),
                             title: Text(
                               'Men Wearing Jackets',
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 22.0, fontWeight: FontWeight.w600),
                             ),

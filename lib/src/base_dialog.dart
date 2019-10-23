@@ -76,14 +76,6 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
     }
   }
 
-  // get _animationAxis {
-  //   if (widget.entryAnimation == EntryAnimation.TOP ||
-  //       widget.entryAnimation == EntryAnimation.BOTTOM)
-  //     return 1;
-  //   else
-  //     return 0;
-  // }
-
   get _isDefaultEntryAnimation =>
       widget.entryAnimation == EntryAnimation.DEFAULT;
 
@@ -174,7 +166,7 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
                 child: widget.title,
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(3.0),
                 child: widget.description,
               ),
               _buildButtonsBar(context),
