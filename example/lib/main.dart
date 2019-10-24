@@ -53,7 +53,7 @@ class MyHomePage extends StatelessWidget {
                               "https://raw.githubusercontent.com/Shashank02051997/FancyGifDialog-Android/master/GIF's/gif14.gif",
                               fit: BoxFit.cover,
                             ),
-                            entryAnimation: EntryAnimation.BOTTOM_TOP,
+                            entryAnimation: EntryAnimation.TOP_LEFT,
                             title: Text(
                               'Granny Eating Chocolate',
                               textAlign: TextAlign.center,
@@ -85,6 +85,7 @@ class MyHomePage extends StatelessWidget {
                             flareAnimation: 'loading',
                             title: Text(
                               'Space Reloading',
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 22.0, fontWeight: FontWeight.w600),
                             ),
@@ -117,10 +118,11 @@ class MyHomePage extends StatelessWidget {
                             ),
                             title: Text(
                               'Men Wearing Jackets',
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 22.0, fontWeight: FontWeight.w600),
                             ),
-                            entryAnimation: EntryAnimation.LEFT_RIGHT,
+                            entryAnimation: EntryAnimation.BOTTOM_RIGHT,
                             description: Text(
                               'This is a men wearing jackets dialog box. This library helps you easily create fancy giffy dialog.',
                               textAlign: TextAlign.center,
