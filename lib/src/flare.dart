@@ -10,6 +10,7 @@ class FlareGiffyDialog extends StatelessWidget {
     @required this.flareAnimation,
     @required this.title,
     @required this.onOkButtonPressed,
+    this.onCancelButtonPressed,
     this.description,
     this.onlyOkButton = false,
     this.buttonOkText,
@@ -38,6 +39,7 @@ class FlareGiffyDialog extends StatelessWidget {
   final double buttonRadius;
   final double cornerRadius;
   final VoidCallback onOkButtonPressed;
+  final VoidCallback onCancelButtonPressed;
   final EntryAnimation entryAnimation;
 
   @override
@@ -60,6 +62,7 @@ class FlareGiffyDialog extends StatelessWidget {
       buttonOkColor: buttonOkColor,
       onOkButtonPressed: onOkButtonPressed,
       buttonOkText: buttonOkText,
+      onCancelButtonPressed: onCancelButtonPressed,
       entryAnimation: entryAnimation,
     );
   }
