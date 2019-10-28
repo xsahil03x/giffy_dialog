@@ -29,7 +29,7 @@ class BaseGiffyDialog extends StatefulWidget {
     @required this.cornerRadius,
     @required this.buttonRadius,
     @required this.entryAnimation,
-    this.onCancelButtonPressed,
+    @required this.onCancelButtonPressed,
   }) : super(key: key);
 
   final Widget imageWidget;
