@@ -29,6 +29,7 @@ class BaseGiffyDialog extends StatefulWidget {
     @required this.cornerRadius,
     @required this.buttonRadius,
     @required this.entryAnimation,
+    @required this.onCancelButtonPressed,
   }) : super(key: key);
 
   final Widget imageWidget;
@@ -42,6 +43,7 @@ class BaseGiffyDialog extends StatefulWidget {
   final double buttonRadius;
   final double cornerRadius;
   final VoidCallback onOkButtonPressed;
+  final VoidCallback onCancelButtonPressed;
   final EntryAnimation entryAnimation;
 
   @override
@@ -182,7 +184,8 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
               color: widget.buttonCancelColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(widget.buttonRadius)),
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: widget.onCancelButtonPressed ??
+                  () => Navigator.of(context).pop(),
               child: widget.buttonCancelText ??
                   Text(
                     'Cancel',

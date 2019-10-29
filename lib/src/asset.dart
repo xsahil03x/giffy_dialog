@@ -7,6 +7,7 @@ class AssetGiffyDialog extends StatelessWidget {
     @required this.image,
     @required this.title,
     @required this.onOkButtonPressed,
+    this.onCancelButtonPressed,
     this.description,
     this.onlyOkButton = false,
     this.buttonOkText,
@@ -31,6 +32,7 @@ class AssetGiffyDialog extends StatelessWidget {
   final double buttonRadius;
   final double cornerRadius;
   final VoidCallback onOkButtonPressed;
+  final VoidCallback onCancelButtonPressed;
   final EntryAnimation entryAnimation;
 
   @override
@@ -46,6 +48,7 @@ class AssetGiffyDialog extends StatelessWidget {
       buttonCancelText: buttonCancelText,
       buttonOkColor: buttonOkColor,
       onOkButtonPressed: onOkButtonPressed,
+      onCancelButtonPressed: onCancelButtonPressed,
       buttonOkText: buttonOkText,
       entryAnimation: entryAnimation,
     );
