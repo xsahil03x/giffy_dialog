@@ -13,7 +13,7 @@ import 'base_dialog.dart';
 /// - assets/my_awesome_flare.flr
 /// ```
 /// Set [FlareGiffyDialog]'s [flarePath] prop to the asset path.  
-/// You also must specify the name of animation sequence to applly via `flareAnimation` prop.
+/// You also must specify the name of animation sequence to apply via `flareAnimation` prop.
 /// ```
 /// FlareGiffyDialog(
 ///   title: Text('Example'),
