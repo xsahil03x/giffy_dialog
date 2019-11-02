@@ -3,6 +3,25 @@ import 'package:flare_flutter/flare_actor.dart';
 
 import 'base_dialog.dart';
 
+/// Giffy Dialog using flare asset.
+///
+/// You need local [Flare](https://github.com/2d-inc/Flare-Flutter) `.flr` asset for this type of Giffy Dialog.  
+/// Place the asset under `/assets` directory in the project root.  
+/// Add the asset to `pubspec.yaml` like so
+/// ```
+/// assets:
+/// - assets/my_awesome_flare.flr
+/// ```
+/// Set [FlareGiffyDialog]'s [flarePath] prop to the asset path.  
+/// You also must specify the name of animation sequence to applly via `flareAnimation` prop.
+/// ```
+/// FlareGiffyDialog(
+///   title: Text('Example'),
+///   description: Text('Dialog text'),
+///   flarePath: 'assets/my_awesome_flare.flr',
+///   flareAnimation: 'dancing',
+///   ...,
+/// );
 class FlareGiffyDialog extends StatelessWidget {
   FlareGiffyDialog({
     Key key,
@@ -26,20 +45,72 @@ class FlareGiffyDialog extends StatelessWidget {
         assert(flareAnimation != null),
         super(key: key);
 
+  /// Path to the Flare asset.
   final String flarePath;
+
+  /// Name of Flare animation to apply.
   final String flareAnimation;
+
+  /// Title text.
   final Text title;
+
+  /// Description text.
   final Text description;
+
+  /// Sets dialog to have only OK button.
+  ///
+  /// Default is false.
+  /// If set to true there is no need to set [buttonCancelText], [buttonCancelColor] and [onCancelButtonPressed]
   final bool onlyOkButton;
+
+  /// Text for OK button.
+  ///
+  /// Default is `OK`.
   final Text buttonOkText;
+
+  /// Text for cancel button
+  ///
+  /// Default is `Cancel`.
   final Text buttonCancelText;
+
+  /// Color of OK button.
+  ///
+  /// Default is `Colors.green`.
   final Color buttonOkColor;
+
+  /// Color of Cancel button
+  ///
+  /// Default is `Colors.grey`.
   final Color buttonCancelColor;
+  
+  /// TODO: this props is not used at the moment.
   final Color cardBackgroundColor;
+
+  /// Radius applied to the button corners.
+  ///
+  /// Default is 8.
   final double buttonRadius;
+
+  /// Radius applied to the dialog box corners.
+  ///
+  /// Default is 8.
   final double cornerRadius;
+
+  /// Callback function to be called on when OK button is pressed.
+  ///
+  /// If set to null, then the button will be disabled and by
+  /// default will resemble a flat button in the Theme's `disabledColor`.
   final VoidCallback onOkButtonPressed;
+
+  /// Callback function to be called on when Cancel button is pressed.
+  ///
+  /// By default (or if set to null) closes the Giffy Dialog via `Navigator.of(context).pop()`.
   final VoidCallback onCancelButtonPressed;
+
+  /// Defines how Giffy Dialog will enter the screen.
+  ///
+  /// Default is [EntryAnimation.DEFAULT] - standard Material dialog
+  /// entrance animation, i.e. slow fade-in in the center of the screen.
   final EntryAnimation entryAnimation;
 
   @override
