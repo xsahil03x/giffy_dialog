@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'base_dialog.dart';
 
-/// Giffy Dialog using image obtained from the network.
+/// Widget that displays Giffy Dialog with image obtained from the network.
 ///
 /// Pass the network image URL to [NetworkGiffyDialog]'s [image] prop using Flutter's `Image.network(src)` widget.
 /// ```
@@ -37,7 +37,8 @@ class NetworkGiffyDialog extends StatelessWidget {
 
   /// Image to display in dialog.
   ///
-  /// Pass `Image.network(src)` widget here. Preferably with `fit: BoxFit.cover` property.
+  /// Pass `Image.network(src)` widget here.  
+  /// Preferably with `fit: BoxFit.cover` property to cover entire top part of Giffy Dialog.
   /// All properties of Image widget are directly passed to Giffy Dialog so feel free to experiment.
   final Widget image;
 

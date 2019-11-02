@@ -3,7 +3,7 @@ import 'package:flare_flutter/flare_actor.dart';
 
 import 'base_dialog.dart';
 
-/// Giffy Dialog using flare asset.
+/// Widget that displays Giffy Dialog with flare asset.
 ///
 /// You need local [Flare](https://github.com/2d-inc/Flare-Flutter) `.flr` asset for this type of Giffy Dialog.  
 /// Place the asset under `/assets` directory in the project root.  
