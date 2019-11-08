@@ -122,6 +122,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/ArtemKolichenkov"><img src="https://avatars3.githubusercontent.com/u/24019688?v=4" width="100px;" alt="ArtemKolichenkov"/><br /><sub><b>ArtemKolichenkov</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=ArtemKolichenkov" title="Documentation">📖</a> <a href="#ideas-ArtemKolichenkov" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/alejandrofierro"><img src="https://avatars1.githubusercontent.com/u/25576040?v=4" width="100px;" alt="Alex Fierro"/><br /><sub><b>Alex Fierro</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=alejandrofierro" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.fieldassist.in"><img src="https://avatars2.githubusercontent.com/u/13694349?v=4" width="100px;" alt="Jai Sachdeva"/><br /><sub><b>Jai Sachdeva</b></sub></a><br /><a href="#question-astralstriker" title="Answering Questions">💬</a></td>
   </tr>
 </table>
 
