@@ -25,6 +25,15 @@
       ]
     },
     {
+      "login": "Kawaeee",
+      "name": "Kasidech C.",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/26347733?v=4",
+      "profile": "https://github.com/Kawaeee",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
       "login": "astralstriker",
       "name": "Jai Sachdeva",
       "avatar_url": "https://avatars2.githubusercontent.com/u/13694349?v=4",
@@ -32,7 +41,7 @@
       "contributions": [
         "question"
       ]
-    }
+     }
   ],
   "contributorsPerLine": 7,
   "projectName": "giffy_dialog",
