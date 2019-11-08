@@ -127,6 +127,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.fb.com/TarekkMA1"><img src="https://avatars0.githubusercontent.com/u/6633545?v=4" width="100px;" alt="Tarekk Mohamed Abdalla"/><br /><sub><b>Tarekk Mohamed Abdalla</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=TarekkMA" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/madhukesh048"><img src="https://avatars0.githubusercontent.com/u/31788197?v=4" width="100px;" alt="madhukesh_048"/><br /><sub><b>madhukesh_048</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=madhukesh048" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://github.com/dpedrinha"><img src="https://avatars2.githubusercontent.com/u/14824799?v=4" width="100px;" alt="dpedrinha"/><br /><sub><b>dpedrinha</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=dpedrinha" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/natezhengbne"><img src="https://avatars1.githubusercontent.com/u/34373238?v=4" width="100px;" alt="Nate"/><br /><sub><b>Nate</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=natezhengbne" title="Code">💻</a> <a href="#example-natezhengbne" title="Examples">💡</a></td>
   </tr>
 </table>
 
