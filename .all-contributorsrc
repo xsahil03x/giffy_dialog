@@ -14,6 +14,15 @@
         "doc",
         "ideas"
       ]
+    },
+    {
+      "login": "alejandrofierro",
+      "name": "Alex Fierro",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/25576040?v=4",
+      "profile": "https://github.com/alejandrofierro",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
