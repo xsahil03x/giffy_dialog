@@ -1,4 +1,5 @@
 # 👏 Giffy Dialogs
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/xsahil03x) [![Twitter](https://img.shields.io/twitter/url/https/github.com/xsahil03x/giffy_dialog.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fxsahil03x%2Fgiffy_dialog)
 
@@ -128,3 +129,19 @@ If you are interested in contributing to the project, please read [Contributing 
 For help getting started with Flutter, view our online [documentation](https://flutter.io/).
 
 For help on editing package code, view the [documentation](https://flutter.io/developing-packages/).
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/ArtemKolichenkov"><img src="https://avatars3.githubusercontent.com/u/24019688?v=4" width="100px;" alt="ArtemKolichenkov"/><br /><sub><b>ArtemKolichenkov</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=ArtemKolichenkov" title="Documentation">📖</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
