@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "ArtemKolichenkov",
+      "name": "ArtemKolichenkov",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/24019688?v=4",
+      "profile": "https://github.com/ArtemKolichenkov",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "giffy_dialog",
+  "projectOwner": "xsahil03x",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
