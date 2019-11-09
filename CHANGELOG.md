@@ -1,3 +1,25 @@
+1.6.0
+
+    1. Added Some more variations for Entry Animation.
+    
+         enum EntryAnimation {
+           DEFAULT, // Center
+           LEFT,
+           RIGHT,
+           TOP,
+           BOTTOM,
+           TOP_LEFT,
+           TOP_RIGHT,
+           BOTTOM_LEFT,
+           BOTTOM_RIGHT,
+         }
+    
+    2. Added a callback for Cancel Button Pressed.
+    
+    3. Added Documentation
+    
+    4. Minor bug fixes
+
 1.5.0
 
     Added Entry Animation for dialogs.
