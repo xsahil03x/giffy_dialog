@@ -41,8 +41,8 @@
       "contributions": [
         "question"
       ]
-     },
-     {
+    },
+    {
       "login": "TarekkMA",
       "name": "Tarekk Mohamed Abdalla",
       "avatar_url": "https://avatars0.githubusercontent.com/u/6633545?v=4",
@@ -50,8 +50,8 @@
       "contributions": [
         "code"
       ]
-     },
-     {
+    },
+    {
       "login": "madhukesh048",
       "name": "madhukesh_048",
       "avatar_url": "https://avatars0.githubusercontent.com/u/31788197?v=4",
@@ -59,8 +59,8 @@
       "contributions": [
         "test"
       ]
-     },
-     {
+    },
+    {
       "login": "dpedrinha",
       "name": "dpedrinha",
       "avatar_url": "https://avatars2.githubusercontent.com/u/14824799?v=4",
@@ -68,8 +68,8 @@
       "contributions": [
         "code"
       ]
-     },
-     {
+    },
+    {
       "login": "natezhengbne",
       "name": "Nate",
       "avatar_url": "https://avatars1.githubusercontent.com/u/34373238?v=4",
@@ -78,8 +78,8 @@
         "code",
         "example"
       ]
-     },
-     {
+    },
+    {
       "login": "alexlindroos",
       "name": "Alex",
       "avatar_url": "https://avatars0.githubusercontent.com/u/17140689?v=4",
@@ -87,7 +87,16 @@
       "contributions": [
         "code"
       ]
-     }
+    },
+    {
+      "login": "jritchie",
+      "name": "jritchie",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2582314?v=4",
+      "profile": "https://github.com/jritchie",
+      "contributions": [
+        "code"
+      ]
+    }
   ],
   "contributorsPerLine": 7,
   "projectName": "giffy_dialog",
