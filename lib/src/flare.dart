@@ -5,14 +5,14 @@ import 'base_dialog.dart';
 
 /// Widget that displays Giffy Dialog with flare asset.
 ///
-/// You need local [Flare](https://github.com/2d-inc/Flare-Flutter) `.flr` asset for this type of Giffy Dialog.  
-/// Place the asset under `/assets` directory in the project root.  
+/// You need local [Flare](https://github.com/2d-inc/Flare-Flutter) `.flr` asset for this type of Giffy Dialog.
+/// Place the asset under `/assets` directory in the project root.
 /// Add the asset to `pubspec.yaml` like so
 /// ```
 /// assets:
 /// - assets/my_awesome_flare.flr
 /// ```
-/// Set [FlareGiffyDialog]'s [flarePath] prop to the asset path.  
+/// Set [FlareGiffyDialog]'s [flarePath] prop to the asset path.
 /// You also must specify the name of animation sequence to apply via `flareAnimation` prop.
 /// ```
 /// FlareGiffyDialog(
@@ -29,6 +29,7 @@ class FlareGiffyDialog extends StatelessWidget {
     @required this.flareAnimation,
     @required this.title,
     @required this.onOkButtonPressed,
+    this.flareFit = BoxFit.cover,
     this.onCancelButtonPressed,
     this.description,
     this.onlyOkButton = false,
@@ -50,6 +51,9 @@ class FlareGiffyDialog extends StatelessWidget {
 
   /// Name of Flare animation to apply.
   final String flareAnimation;
+
+  /// BoxFit sizing of the Flare asset.
+  final BoxFit flareFit;
 
   /// Title text.
   final Text title;
@@ -82,7 +86,7 @@ class FlareGiffyDialog extends StatelessWidget {
   ///
   /// Default is `Colors.grey`.
   final Color buttonCancelColor;
-  
+
   /// TODO: this props is not used at the moment.
   final Color cardBackgroundColor;
 
@@ -118,7 +122,7 @@ class FlareGiffyDialog extends StatelessWidget {
     final imageWidget = FlareActor(
       flarePath,
       alignment: Alignment.center,
-      fit: BoxFit.cover,
+      fit: flareFit,
       animation: flareAnimation,
     );
     return BaseGiffyDialog(
