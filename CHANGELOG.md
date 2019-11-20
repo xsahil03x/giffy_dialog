@@ -1,3 +1,7 @@
+1.6.1
+
+    Minor Improvements.
+
 1.6.0
 
     1. Added Some more variations for Entry Animation.

@@ -37,7 +37,7 @@ class NetworkGiffyDialog extends StatelessWidget {
 
   /// Image to display in dialog.
   ///
-  /// Pass `Image.network(src)` widget here.  
+  /// Pass `Image.network(src)` widget here.
   /// Preferably with `fit: BoxFit.cover` property to cover entire top part of Giffy Dialog.
   /// All properties of Image widget are directly passed to Giffy Dialog so feel free to experiment.
   final Widget image;

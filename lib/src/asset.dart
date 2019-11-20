@@ -3,10 +3,10 @@ import 'package:giffy_dialog/src/base_dialog.dart';
 
 /// Widget that displays Giffy Dialog with local asset.
 ///
-/// You need local asset for this type of Giffy Dialog.  
-/// Asset can be `.gif`, `.jpg` or `.png` image file. GIF animation is supported.  
-/// Transparency of the image is retained.  
-/// Place the asset under `/assets` directory in the project root.  
+/// You need local asset for this type of Giffy Dialog.
+/// Asset can be `.gif`, `.jpg` or `.png` image file. GIF animation is supported.
+/// Transparency of the image is retained.
+/// Place the asset under `/assets` directory in the project root.
 /// Add the asset to `pubspec.yaml` like so
 /// ```
 /// assets:
@@ -45,7 +45,7 @@ class AssetGiffyDialog extends StatelessWidget {
 
   /// Image to display in dialog.
   ///
-  /// Pass `Image.asset(name)` widget here.  
+  /// Pass `Image.asset(name)` widget here.
   /// Preferably with `fit: BoxFit.cover` property to cover entire top part of Giffy Dialog.
   /// All properties of Image widget are directly passed to Giffy Dialog so feel free to experiment.
   final Image image;
