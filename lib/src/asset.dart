@@ -28,10 +28,11 @@ class AssetGiffyDialog extends StatelessWidget {
     Key key,
     @required this.image,
     @required this.title,
-    @required this.onOkButtonPressed,
+    this.onOkButtonPressed,
     this.onCancelButtonPressed,
     this.description,
     this.onlyOkButton = false,
+    this.onlyCancelButton = false,
     this.buttonOkText,
     this.buttonCancelText,
     this.buttonOkColor = Colors.green,
@@ -61,6 +62,13 @@ class AssetGiffyDialog extends StatelessWidget {
   /// Default is false.
   /// If set to true there is no need to set [buttonCancelText], [buttonCancelColor] and [onCancelButtonPressed]
   final bool onlyOkButton;
+
+  /// Sets dialog to have only Cancel button.
+  ///
+  /// Default is false.
+  /// If set to true there is no need to set [buttonOkText], [buttonOkColor] and [onOkButtonPressed]
+  final bool onlyCancelButton;
+
 
   /// Text for OK button.
   ///
@@ -117,6 +125,7 @@ class AssetGiffyDialog extends StatelessWidget {
       title: title,
       description: description,
       onlyOkButton: onlyOkButton,
+      onlyCancelButton: onlyCancelButton,
       buttonCancelColor: buttonCancelColor,
       buttonRadius: buttonRadius,
       buttonCancelText: buttonCancelText,
