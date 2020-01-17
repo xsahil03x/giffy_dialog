@@ -117,24 +117,28 @@ If you are interested in contributing to the project, please read [Contributing 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/ArtemKolichenkov"><img src="https://avatars3.githubusercontent.com/u/24019688?v=4" width="100px;" alt="ArtemKolichenkov"/><br /><sub><b>ArtemKolichenkov</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=ArtemKolichenkov" title="Documentation">📖</a> <a href="#ideas-ArtemKolichenkov" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://github.com/alejandrofierro"><img src="https://avatars1.githubusercontent.com/u/25576040?v=4" width="100px;" alt="Alex Fierro"/><br /><sub><b>Alex Fierro</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=alejandrofierro" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Kawaeee"><img src="https://avatars2.githubusercontent.com/u/26347733?v=4" width="100px;" alt="Kasidech C."/><br /><sub><b>Kasidech C.</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=Kawaeee" title="Code">💻</a></td>
-    <td align="center"><a href="http://www.fieldassist.in"><img src="https://avatars2.githubusercontent.com/u/13694349?v=4" width="100px;" alt="Jai Sachdeva"/><br /><sub><b>Jai Sachdeva</b></sub></a><br /><a href="#question-astralstriker" title="Answering Questions">💬</a></td>
-    <td align="center"><a href="https://www.fb.com/TarekkMA1"><img src="https://avatars0.githubusercontent.com/u/6633545?v=4" width="100px;" alt="Tarekk Mohamed Abdalla"/><br /><sub><b>Tarekk Mohamed Abdalla</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=TarekkMA" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/madhukesh048"><img src="https://avatars0.githubusercontent.com/u/31788197?v=4" width="100px;" alt="madhukesh_048"/><br /><sub><b>madhukesh_048</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=madhukesh048" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://github.com/dpedrinha"><img src="https://avatars2.githubusercontent.com/u/14824799?v=4" width="100px;" alt="dpedrinha"/><br /><sub><b>dpedrinha</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=dpedrinha" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/ArtemKolichenkov"><img src="https://avatars3.githubusercontent.com/u/24019688?v=4" width="100px;" alt=""/><br /><sub><b>ArtemKolichenkov</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=ArtemKolichenkov" title="Documentation">📖</a> <a href="#ideas-ArtemKolichenkov" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/alejandrofierro"><img src="https://avatars1.githubusercontent.com/u/25576040?v=4" width="100px;" alt=""/><br /><sub><b>Alex Fierro</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=alejandrofierro" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Kawaeee"><img src="https://avatars2.githubusercontent.com/u/26347733?v=4" width="100px;" alt=""/><br /><sub><b>Kasidech C.</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=Kawaeee" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.fieldassist.in"><img src="https://avatars2.githubusercontent.com/u/13694349?v=4" width="100px;" alt=""/><br /><sub><b>Jai Sachdeva</b></sub></a><br /><a href="#question-astralstriker" title="Answering Questions">💬</a></td>
+    <td align="center"><a href="https://www.fb.com/TarekkMA1"><img src="https://avatars0.githubusercontent.com/u/6633545?v=4" width="100px;" alt=""/><br /><sub><b>Tarekk Mohamed Abdalla</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=TarekkMA" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/madhukesh048"><img src="https://avatars0.githubusercontent.com/u/31788197?v=4" width="100px;" alt=""/><br /><sub><b>madhukesh_048</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=madhukesh048" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/dpedrinha"><img src="https://avatars2.githubusercontent.com/u/14824799?v=4" width="100px;" alt=""/><br /><sub><b>dpedrinha</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=dpedrinha" title="Code">💻</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/natezhengbne"><img src="https://avatars1.githubusercontent.com/u/34373238?v=4" width="100px;" alt="Nate"/><br /><sub><b>Nate</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=natezhengbne" title="Code">💻</a> <a href="#example-natezhengbne" title="Examples">💡</a></td>
-    <td align="center"><a href="https://github.com/alexlindroos"><img src="https://avatars0.githubusercontent.com/u/17140689?v=4" width="100px;" alt="Alex"/><br /><sub><b>Alex</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=alexlindroos" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/jritchie"><img src="https://avatars3.githubusercontent.com/u/2582314?v=4" width="100px;" alt="jritchie"/><br /><sub><b>jritchie</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=jritchie" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/natezhengbne"><img src="https://avatars1.githubusercontent.com/u/34373238?v=4" width="100px;" alt=""/><br /><sub><b>Nate</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=natezhengbne" title="Code">💻</a> <a href="#example-natezhengbne" title="Examples">💡</a></td>
+    <td align="center"><a href="https://github.com/alexlindroos"><img src="https://avatars0.githubusercontent.com/u/17140689?v=4" width="100px;" alt=""/><br /><sub><b>Alex</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=alexlindroos" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jritchie"><img src="https://avatars3.githubusercontent.com/u/2582314?v=4" width="100px;" alt=""/><br /><sub><b>jritchie</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=jritchie" title="Code">💻</a></td>
+    <td align="center"><a href="http://saadbinshahid.com"><img src="https://avatars1.githubusercontent.com/u/7608345?v=4" width="100px;" alt=""/><br /><sub><b>Saad Bin Shahid</b></sub></a><br /><a href="https://github.com/xsahil03x/giffy_dialog/commits?author=SaadBinShahid" title="Code">💻</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
