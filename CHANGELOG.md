@@ -1,3 +1,10 @@
+1.7.0
+
+    1. Added ability to have only Cancel button,
+    just like only OK button. Thanks to (@SaadBinShahid)
+    
+    2. Upgraded flare_flutter dependency.
+
 1.6.1
 
     Minor Improvements.
