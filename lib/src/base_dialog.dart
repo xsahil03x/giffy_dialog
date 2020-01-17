@@ -40,6 +40,7 @@ class BaseGiffyDialog extends StatefulWidget {
     @required this.onOkButtonPressed,
     @required this.description,
     @required this.onlyOkButton,
+    @required this.onlyCancelButton,
     @required this.buttonOkText,
     @required this.buttonCancelText,
     @required this.buttonOkColor,
@@ -54,6 +55,7 @@ class BaseGiffyDialog extends StatefulWidget {
   final Text title;
   final Text description;
   final bool onlyOkButton;
+  final bool onlyCancelButton;
   final Text buttonOkText;
   final Text buttonCancelText;
   final Color buttonOkColor;
@@ -211,17 +213,19 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
                   ),
             )
           ],
-          RaisedButton(
-            color: widget.buttonOkColor,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(widget.buttonRadius)),
-            onPressed: widget.onOkButtonPressed,
-            child: widget.buttonOkText ??
-                Text(
-                  'OK',
-                  style: TextStyle(color: Colors.white),
-                ),
-          ),
+          if (!widget.onlyCancelButton) ...[
+            RaisedButton(
+              color: widget.buttonOkColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(widget.buttonRadius)),
+              onPressed: widget.onOkButtonPressed,
+              child: widget.buttonOkText ??
+                  Text(
+                    'OK',
+                    style: TextStyle(color: Colors.white),
+                  ),
+            ),
+          ],
         ],
       ),
     );
