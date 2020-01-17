@@ -96,11 +96,21 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "SaadBinShahid",
+      "name": "Saad Bin Shahid",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7608345?v=4",
+      "profile": "http://saadbinshahid.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "giffy_dialog",
   "projectOwner": "xsahil03x",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
