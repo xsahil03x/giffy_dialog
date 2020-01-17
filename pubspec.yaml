@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flare_flutter: ^1.7.1
+  flare_flutter: ^2.0.1
   
 dev_dependencies:
   flutter_test:
