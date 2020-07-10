@@ -56,10 +56,13 @@ class MyHomePage extends StatelessWidget {
                             entryAnimation: EntryAnimation.TOP_LEFT,
                             title: RichText(
                               text: TextSpan(
-                                text: 'Granny Eating Chocolate ',
-                              ),
+                                  text: 'Granny Eating Chocolate ',
+                                  style: TextStyle(
+                                      fontSize: 22.0,
+                                      fontWeight: FontWeight.w600)),
                             ),
                             description: RichText(
+                              textAlign: TextAlign.center,
                               text: TextSpan(
                                 text:
                                     'This is a granny eating chocolate dialog box. This library helps you easily create fancy giffy dialog.',
@@ -85,6 +88,7 @@ class MyHomePage extends StatelessWidget {
                             flarePath: 'assets/space_demo.flr',
                             flareAnimation: 'loading',
                             title: RichText(
+                              textAlign: TextAlign.center,
                               text: TextSpan(
                                 text: 'Space Reloading',
                               ),
@@ -93,6 +97,9 @@ class MyHomePage extends StatelessWidget {
                               text: TextSpan(
                                 text:
                                     'This is a space reloading dialog box. This library helps you easily create fancy giffy dialog.',
+                                style: TextStyle(
+                                    fontSize: 22.0,
+                                    fontWeight: FontWeight.w600),
                               ),
                             ),
                             onOkButtonPressed: () {},
