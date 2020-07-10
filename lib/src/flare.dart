@@ -57,10 +57,10 @@ class FlareGiffyDialog extends StatelessWidget {
   final BoxFit flareFit;
 
   /// Title text.
-  final Text title;
+  final RichText title;
 
   /// Description text.
-  final Text description;
+  final RichText description;
 
   /// Sets dialog to have only OK button.
   ///
