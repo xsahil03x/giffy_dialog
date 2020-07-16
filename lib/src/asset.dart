@@ -69,7 +69,6 @@ class AssetGiffyDialog extends StatelessWidget {
   /// If set to true there is no need to set [buttonOkText], [buttonOkColor] and [onOkButtonPressed]
   final bool onlyCancelButton;
 
-
   /// Text for OK button.
   ///
   /// Default is `OK`.
