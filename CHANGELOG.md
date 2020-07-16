@@ -1,3 +1,9 @@
+1.8.0
+
+    1. Fixed pub scoring errors
+
+    2. Upgraded flare_flutter dependency.
+
 1.7.0
 
     1. Added ability to have only Cancel button,
