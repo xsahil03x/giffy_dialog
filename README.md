@@ -96,7 +96,7 @@ onPressed: () {
     image: Image.asset(
               'assets/help_stick.gif',
               fit: BoxFit.cover
-            ),,
+            ),
     title: Text('Men Wearing Jackets',
             style: TextStyle(
             fontSize: 22.0, fontWeight: FontWeight.w600),
