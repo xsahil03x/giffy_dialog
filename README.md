@@ -93,7 +93,10 @@ onPressed: () {
 onPressed: () {
   showDialog(
   context: context,builder: (_) => AssetGiffyDialog(
-    imagePath: 'assets/men_wearing_jacket.gif',
+    image: Image.asset(
+              'assets/help_stick.gif',
+              fit: BoxFit.cover
+            ),,
     title: Text('Men Wearing Jackets',
             style: TextStyle(
             fontSize: 22.0, fontWeight: FontWeight.w600),
