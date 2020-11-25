@@ -18,7 +18,11 @@ void main() {
       try {
         await tester.pumpWidget(AssetGiffyDialog(
           onOkButtonPressed: () {},
-          title: Text(''),
+          title: RichText(
+            text: TextSpan(
+              text: '',
+            ),
+          ),
           image: null,
         ));
       } catch (error) {
@@ -39,13 +43,16 @@ void main() {
       }
     });
 
-    testWidgets(
-        'FlareGiffyDialog throws if initialized with null flarePath',
+    testWidgets('FlareGiffyDialog throws if initialized with null flarePath',
         (WidgetTester tester) async {
       try {
         await tester.pumpWidget(FlareGiffyDialog(
           onOkButtonPressed: () {},
-          title: Text(''),
+          title: RichText(
+            text: TextSpan(
+              text: '',
+            ),
+          ),
           flareAnimation: '',
           flarePath: null,
         ));
@@ -56,40 +63,59 @@ void main() {
 
     testWidgets(
         'FlareGiffyDialog throws if initialized with null flareAnimation',
-            (WidgetTester tester) async {
-          try {
-            await tester.pumpWidget(FlareGiffyDialog(
-              onOkButtonPressed: () {},
-              flarePath: 'assets/space_demo.flr',
-              title: Text('loading'),
-              flareAnimation: null,
-            ));
-          } catch (error) {
-            expect(error, isAssertionError);
-          }
-        });
+        (WidgetTester tester) async {
+      try {
+        await tester.pumpWidget(FlareGiffyDialog(
+          onOkButtonPressed: () {},
+          flarePath: 'assets/space_demo.flr',
+          title: RichText(
+            text: TextSpan(
+              text: 'Loading ',
+              children: <TextSpan>[
+                TextSpan(
+                    text: 'bold',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                TextSpan(text: ' Text!'),
+              ],
+            ),
+          ),
+          flareAnimation: null,
+        ));
+      } catch (error) {
+        expect(error, isAssertionError);
+      }
+    });
 
-    testWidgets(
-        'FlareGiffyDialog throws if initialized with null title',
-            (WidgetTester tester) async {
-          try {
-            await tester.pumpWidget(FlareGiffyDialog(
-              onOkButtonPressed: () {},
-              flarePath: 'assets/space_demo.flr',
-              flareAnimation: 'loading',
-              title: null,
-            ));
-          } catch (error) {
-            expect(error, isAssertionError);
-          }
-        });
+    testWidgets('FlareGiffyDialog throws if initialized with null title',
+        (WidgetTester tester) async {
+      try {
+        await tester.pumpWidget(FlareGiffyDialog(
+          onOkButtonPressed: () {},
+          flarePath: 'assets/space_demo.flr',
+          flareAnimation: 'loading',
+          title: null,
+        ));
+      } catch (error) {
+        expect(error, isAssertionError);
+      }
+    });
 
     testWidgets('NetworkGiffyDialog throws if initialized with null image',
         (WidgetTester tester) async {
       try {
         await tester.pumpWidget(NetworkGiffyDialog(
           onOkButtonPressed: () {},
-          title: Text(''),
+          title: RichText(
+            text: TextSpan(
+              text: '',
+              children: <TextSpan>[
+                TextSpan(
+                    text: 'bold',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                TextSpan(text: ''),
+              ],
+            ),
+          ),
           image: null,
         ));
       } catch (error) {

@@ -52,10 +52,10 @@ class AssetGiffyDialog extends StatelessWidget {
   final Image image;
 
   /// Title text.
-  final Text title;
+  final RichText title;
 
   /// Description text.
-  final Text description;
+  final RichText description;
 
   /// Sets dialog to have only OK button.
   ///

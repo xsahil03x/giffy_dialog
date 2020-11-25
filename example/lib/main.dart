@@ -54,15 +54,19 @@ class MyHomePage extends StatelessWidget {
                               fit: BoxFit.cover,
                             ),
                             entryAnimation: EntryAnimation.TOP_LEFT,
-                            title: Text(
-                              'Granny Eating Chocolate',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: 22.0, fontWeight: FontWeight.w600),
+                            title: RichText(
+                              text: TextSpan(
+                                  text: 'Granny Eating Chocolate ',
+                                  style: TextStyle(
+                                      fontSize: 22.0,
+                                      fontWeight: FontWeight.w600)),
                             ),
-                            description: Text(
-                              'This is a granny eating chocolate dialog box. This library helps you easily create fancy giffy dialog.',
+                            description: RichText(
                               textAlign: TextAlign.center,
+                              text: TextSpan(
+                                text:
+                                    'This is a granny eating chocolate dialog box. This library helps you easily create fancy giffy dialog.',
+                              ),
                             ),
                             onOkButtonPressed: () {},
                           ));
@@ -83,17 +87,20 @@ class MyHomePage extends StatelessWidget {
                             key: keys[3],
                             flarePath: 'assets/space_demo.flr',
                             flareAnimation: 'loading',
-                            title: Text(
-                              'Space Reloading',
+                            title: RichText(
                               textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: 22.0, fontWeight: FontWeight.w600),
+                              text: TextSpan(
+                                text: 'Space Reloading',
+                              ),
                             ),
-                            entryAnimation: EntryAnimation.DEFAULT,
-                            description: Text(
-                              'This is a space reloading dialog box. This library helps you easily create fancy flare dialog.',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(),
+                            description: RichText(
+                              text: TextSpan(
+                                text:
+                                    'This is a space reloading dialog box. This library helps you easily create fancy giffy dialog.',
+                                style: TextStyle(
+                                    fontSize: 22.0,
+                                    fontWeight: FontWeight.w600),
+                              ),
                             ),
                             onOkButtonPressed: () {},
                           ));
@@ -116,17 +123,21 @@ class MyHomePage extends StatelessWidget {
                               'assets/men_wearing_jacket.gif',
                               fit: BoxFit.cover,
                             ),
-                            title: Text(
-                              'Men Wearing Jackets',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: 22.0, fontWeight: FontWeight.w600),
+                            title: RichText(
+                              text: TextSpan(
+                                text: 'Men Wearing Jackets',
+                                style: TextStyle(
+                                    fontSize: 22.0,
+                                    fontWeight: FontWeight.w600),
+                              ),
                             ),
-                            entryAnimation: EntryAnimation.BOTTOM_RIGHT,
-                            description: Text(
-                              'This is a men wearing jackets dialog box. This library helps you easily create fancy giffy dialog.',
+                            description: RichText(
                               textAlign: TextAlign.center,
-                              style: TextStyle(),
+                              text: TextSpan(
+                                text:
+                                    'This is a men wearing jackets dialog box. This library helps you easily create fancy giffy dialog.',
+                                style: TextStyle(),
+                              ),
                             ),
                             onOkButtonPressed: () {},
                           ));

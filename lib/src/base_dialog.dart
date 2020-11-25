@@ -52,8 +52,8 @@ class BaseGiffyDialog extends StatefulWidget {
   }) : super(key: key);
 
   final Widget imageWidget;
-  final Text title;
-  final Text description;
+  final RichText title;
+  final RichText description;
   final bool onlyOkButton;
   final bool onlyCancelButton;
   final Text buttonOkText;
