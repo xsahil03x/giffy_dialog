@@ -24,10 +24,10 @@ import 'base_dialog.dart';
 /// );
 class FlareGiffyDialog extends StatelessWidget {
   FlareGiffyDialog({
-    Key key,
-    @required this.flarePath,
-    @required this.flareAnimation,
-    @required this.title,
+    Key? key,
+    required this.flarePath,
+    required this.flareAnimation,
+    required this.title,
     this.onOkButtonPressed,
     this.flareFit = BoxFit.cover,
     this.onCancelButtonPressed,
@@ -60,7 +60,7 @@ class FlareGiffyDialog extends StatelessWidget {
   final Text title;
 
   /// Description text.
-  final Text description;
+  final Text? description;
 
   /// Sets dialog to have only OK button.
   ///
@@ -77,12 +77,12 @@ class FlareGiffyDialog extends StatelessWidget {
   /// Text for OK button.
   ///
   /// Default is `OK`.
-  final Text buttonOkText;
+  final Text? buttonOkText;
 
   /// Text for cancel button
   ///
   /// Default is `Cancel`.
-  final Text buttonCancelText;
+  final Text? buttonCancelText;
 
   /// Color of OK button.
   ///
@@ -95,7 +95,7 @@ class FlareGiffyDialog extends StatelessWidget {
   final Color buttonCancelColor;
 
   /// TODO: this props is not used at the moment.
-  final Color cardBackgroundColor;
+  final Color? cardBackgroundColor;
 
   /// Radius applied to the button corners.
   ///
@@ -111,12 +111,12 @@ class FlareGiffyDialog extends StatelessWidget {
   ///
   /// If set to null, then the button will be disabled and by
   /// default will resemble a flat button in the Theme's `disabledColor`.
-  final VoidCallback onOkButtonPressed;
+  final VoidCallback? onOkButtonPressed;
 
   /// Callback function to be called on when Cancel button is pressed.
   ///
   /// By default (or if set to null) closes the Giffy Dialog via `Navigator.of(context).pop()`.
-  final VoidCallback onCancelButtonPressed;
+  final VoidCallback? onCancelButtonPressed;
 
   /// Defines how Giffy Dialog will enter the screen.
   ///
