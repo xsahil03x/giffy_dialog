@@ -1,3 +1,13 @@
+2.0.0
+
+    1. Update funding.yml
+
+    2. [Linux] Add linux desktop support
+
+    3. [Null Safety] Migrate project to support null safety
+
+    4. [Test] Remove assertion test case
+
 1.8.0
 
     1. Fixed pub scoring errors
