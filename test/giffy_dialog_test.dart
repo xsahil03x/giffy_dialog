@@ -2,9 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:giffy_dialog/giffy_dialog.dart';
-import '../example/lib/main.dart';
 import 'package:image_test_utils/image_test_utils.dart';
+
+import '../example/lib/main.dart';
 
 const double PORTRAIT_WIDTH = 1800.0;
 const double PORTRAIT_HEIGHT = 2400.0;
@@ -12,112 +12,12 @@ const double LANDSCAPE_WIDTH = 2400.0;
 const double LANDSCAPE_HEIGHT = 1800.0;
 
 void main() {
-  group('Dialog Assertion Test', () {
-    testWidgets('AssetGiffyDialog throws if initialized with null image',
-        (WidgetTester tester) async {
-      try {
-        await tester.pumpWidget(AssetGiffyDialog(
-          onOkButtonPressed: () {},
-          title: Text(''),
-          image: null,
-        ));
-      } catch (error) {
-        expect(error, isAssertionError);
-      }
-    });
-
-    testWidgets('AssetGiffyDialog throws if initialized with null title',
-        (WidgetTester tester) async {
-      try {
-        await tester.pumpWidget(AssetGiffyDialog(
-          onOkButtonPressed: () {},
-          image: Image.asset('assets/men_wearing_jacket.gif'),
-          title: null,
-        ));
-      } catch (error) {
-        expect(error, isAssertionError);
-      }
-    });
-
-    testWidgets(
-        'FlareGiffyDialog throws if initialized with null flarePath',
-        (WidgetTester tester) async {
-      try {
-        await tester.pumpWidget(FlareGiffyDialog(
-          onOkButtonPressed: () {},
-          title: Text(''),
-          flareAnimation: '',
-          flarePath: null,
-        ));
-      } catch (error) {
-        expect(error, isAssertionError);
-      }
-    });
-
-    testWidgets(
-        'FlareGiffyDialog throws if initialized with null flareAnimation',
-            (WidgetTester tester) async {
-          try {
-            await tester.pumpWidget(FlareGiffyDialog(
-              onOkButtonPressed: () {},
-              flarePath: 'assets/space_demo.flr',
-              title: Text('loading'),
-              flareAnimation: null,
-            ));
-          } catch (error) {
-            expect(error, isAssertionError);
-          }
-        });
-
-    testWidgets(
-        'FlareGiffyDialog throws if initialized with null title',
-            (WidgetTester tester) async {
-          try {
-            await tester.pumpWidget(FlareGiffyDialog(
-              onOkButtonPressed: () {},
-              flarePath: 'assets/space_demo.flr',
-              flareAnimation: 'loading',
-              title: null,
-            ));
-          } catch (error) {
-            expect(error, isAssertionError);
-          }
-        });
-
-    testWidgets('NetworkGiffyDialog throws if initialized with null image',
-        (WidgetTester tester) async {
-      try {
-        await tester.pumpWidget(NetworkGiffyDialog(
-          onOkButtonPressed: () {},
-          title: Text(''),
-          image: null,
-        ));
-      } catch (error) {
-        expect(error, isAssertionError);
-      }
-    });
-
-    testWidgets('NetworkGiffyDialog throws if initialized with null title',
-        (WidgetTester tester) async {
-      try {
-        await tester.pumpWidget(NetworkGiffyDialog(
-          onOkButtonPressed: () {},
-          image: Image.network(
-            "https://raw.githubusercontent.com/Shashank02051997/FancyGifDialog-Android/master/GIF's/gif14.gif",
-          ),
-          title: null,
-        ));
-      } catch (error) {
-        expect(error, isAssertionError);
-      }
-    });
-  });
-
   group('Dialog Smoke and Orientation Test', () {
     testWidgets('Check Portrait Dialog test', (WidgetTester tester) async {
       provideMockedNetworkImages(() async {
         final TestWidgetsFlutterBinding binding =
-            TestWidgetsFlutterBinding.ensureInitialized();
+            TestWidgetsFlutterBinding.ensureInitialized()
+                as TestWidgetsFlutterBinding;
         binding.window.physicalSizeTestValue =
             (Size(PORTRAIT_WIDTH, PORTRAIT_HEIGHT));
 
@@ -156,7 +56,8 @@ void main() {
     testWidgets('Check Landscape Dialog test', (WidgetTester tester) async {
       provideMockedNetworkImages(() async {
         final TestWidgetsFlutterBinding binding =
-            TestWidgetsFlutterBinding.ensureInitialized();
+            TestWidgetsFlutterBinding.ensureInitialized()
+                as TestWidgetsFlutterBinding;
         binding.window.physicalSizeTestValue =
             Size(LANDSCAPE_WIDTH, LANDSCAPE_HEIGHT);
 
