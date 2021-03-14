@@ -28,7 +28,7 @@ dependencies:
 
 
 # ❔ Usage
-
+git
 ### Import this class
 
 ```dart
@@ -43,8 +43,7 @@ import 'package:giffy_dialog/giffy_dialog.dart';
 onPressed: () {
   showDialog(
   context: context,builder: (_) => NetworkGiffyDialog(
-    imageUrl:"https://raw.githubusercontent.com/Shashank02051997/
-              FancyGifDialog-Android/master/GIF's/gif14.gif",
+    image: Image.asset("https://raw.githubusercontent.com/Shashank02051997/FancyGifDialog-Android/master/GIF's/gif14.gif"),
     title: Text('Granny Eating Chocolate',
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -93,7 +92,7 @@ onPressed: () {
 onPressed: () {
   showDialog(
   context: context,builder: (_) => AssetGiffyDialog(
-    imagePath: 'assets/men_wearing_jacket.gif',
+    image: Image.asset('assets/men_wearing_jacket.gif'),
     title: Text('Men Wearing Jackets',
             style: TextStyle(
             fontSize: 22.0, fontWeight: FontWeight.w600),
