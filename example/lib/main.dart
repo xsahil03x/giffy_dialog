@@ -81,7 +81,7 @@ class MyHomePage extends StatelessWidget {
                       context: context,
                       builder: (_) => FlareGiffyDialog(
                             key: keys[3],
-                            flarePath: 'assets/space_demo.flr',
+                            flarePath: 'example/assets/space_demo.flr',
                             flareAnimation: 'loading',
                             title: Text(
                               'Space Reloading',
@@ -113,7 +113,7 @@ class MyHomePage extends StatelessWidget {
                       builder: (_) => AssetGiffyDialog(
                             key: keys[5],
                             image: Image.asset(
-                              'assets/men_wearing_jacket.gif',
+                              'example/assets/men_wearing_jacket.gif',
                               fit: BoxFit.cover,
                             ),
                             title: Text(
