@@ -3,8 +3,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:giffy_dialog/giffy_dialog.dart';
+import 'package:network_image_mock/network_image_mock.dart';
+
 import '../example/lib/main.dart';
-import 'package:image_test_utils/image_test_utils.dart';
 
 const double PORTRAIT_WIDTH = 1800.0;
 const double PORTRAIT_HEIGHT = 2400.0;
@@ -39,8 +40,7 @@ void main() {
       }
     });
 
-    testWidgets(
-        'FlareGiffyDialog throws if initialized with null flarePath',
+    testWidgets('FlareGiffyDialog throws if initialized with null flarePath',
         (WidgetTester tester) async {
       try {
         await tester.pumpWidget(FlareGiffyDialog(
@@ -56,33 +56,32 @@ void main() {
 
     testWidgets(
         'FlareGiffyDialog throws if initialized with null flareAnimation',
-            (WidgetTester tester) async {
-          try {
-            await tester.pumpWidget(FlareGiffyDialog(
-              onOkButtonPressed: () {},
-              flarePath: 'assets/space_demo.flr',
-              title: Text('loading'),
-              flareAnimation: null,
-            ));
-          } catch (error) {
-            expect(error, isAssertionError);
-          }
-        });
+        (WidgetTester tester) async {
+      try {
+        await tester.pumpWidget(FlareGiffyDialog(
+          onOkButtonPressed: () {},
+          flarePath: 'assets/space_demo.flr',
+          title: Text('loading'),
+          flareAnimation: null,
+        ));
+      } catch (error) {
+        expect(error, isAssertionError);
+      }
+    });
 
-    testWidgets(
-        'FlareGiffyDialog throws if initialized with null title',
-            (WidgetTester tester) async {
-          try {
-            await tester.pumpWidget(FlareGiffyDialog(
-              onOkButtonPressed: () {},
-              flarePath: 'assets/space_demo.flr',
-              flareAnimation: 'loading',
-              title: null,
-            ));
-          } catch (error) {
-            expect(error, isAssertionError);
-          }
-        });
+    testWidgets('FlareGiffyDialog throws if initialized with null title',
+        (WidgetTester tester) async {
+      try {
+        await tester.pumpWidget(FlareGiffyDialog(
+          onOkButtonPressed: () {},
+          flarePath: 'assets/space_demo.flr',
+          flareAnimation: 'loading',
+          title: null,
+        ));
+      } catch (error) {
+        expect(error, isAssertionError);
+      }
+    });
 
     testWidgets('NetworkGiffyDialog throws if initialized with null image',
         (WidgetTester tester) async {
@@ -115,7 +114,7 @@ void main() {
 
   group('Dialog Smoke and Orientation Test', () {
     testWidgets('Check Portrait Dialog test', (WidgetTester tester) async {
-      provideMockedNetworkImages(() async {
+      mockNetworkImagesFor(() async {
         final TestWidgetsFlutterBinding binding =
             TestWidgetsFlutterBinding.ensureInitialized();
         binding.window.physicalSizeTestValue =
@@ -154,7 +153,7 @@ void main() {
     });
 
     testWidgets('Check Landscape Dialog test', (WidgetTester tester) async {
-      provideMockedNetworkImages(() async {
+      mockNetworkImagesFor(() async {
         final TestWidgetsFlutterBinding binding =
             TestWidgetsFlutterBinding.ensureInitialized();
         binding.window.physicalSizeTestValue =
