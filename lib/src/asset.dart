@@ -25,9 +25,9 @@ import 'package:giffy_dialog/src/base_dialog.dart';
 /// );
 class AssetGiffyDialog extends StatelessWidget {
   AssetGiffyDialog({
-    Key key,
-    @required this.image,
-    @required this.title,
+    Key? key,
+    required this.image,
+    required this.title,
     this.onOkButtonPressed,
     this.onCancelButtonPressed,
     this.description,
@@ -40,9 +40,7 @@ class AssetGiffyDialog extends StatelessWidget {
     this.cornerRadius = 8.0,
     this.buttonRadius = 8.0,
     this.entryAnimation = EntryAnimation.DEFAULT,
-  })  : assert(image != null),
-        assert(title != null),
-        super(key: key);
+  })  : super(key: key);
 
   /// Image to display in dialog.
   ///
@@ -55,7 +53,7 @@ class AssetGiffyDialog extends StatelessWidget {
   final Text title;
 
   /// Description text.
-  final Text description;
+  final Text? description;
 
   /// Sets dialog to have only OK button.
   ///
@@ -72,12 +70,12 @@ class AssetGiffyDialog extends StatelessWidget {
   /// Text for OK button.
   ///
   /// Default is `OK`.
-  final Text buttonOkText;
+  final Text? buttonOkText;
 
   /// Text for cancel button
   ///
   /// Default is `Cancel`.
-  final Text buttonCancelText;
+  final Text? buttonCancelText;
 
   /// Color of OK button.
   ///
@@ -103,12 +101,12 @@ class AssetGiffyDialog extends StatelessWidget {
   ///
   /// If set to null, then the button will be disabled and by
   /// default will resemble a flat button in the Theme's `disabledColor`.
-  final VoidCallback onOkButtonPressed;
+  final VoidCallback? onOkButtonPressed;
 
   /// Callback function to be called on when Cancel button is pressed.
   ///
   /// By default (or if set to null) closes the Giffy Dialog via `Navigator.of(context).pop()`.
-  final VoidCallback onCancelButtonPressed;
+  final VoidCallback? onCancelButtonPressed;
 
   /// Defines how Giffy Dialog will enter the screen.
   ///
