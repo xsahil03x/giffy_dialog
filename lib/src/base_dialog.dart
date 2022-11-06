@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 /// Defines variants of entry animations
@@ -34,36 +32,36 @@ enum EntryAnimation {
 
 class BaseGiffyDialog extends StatefulWidget {
   BaseGiffyDialog({
-    Key key,
-    @required this.imageWidget,
-    @required this.title,
-    @required this.onOkButtonPressed,
-    @required this.description,
-    @required this.onlyOkButton,
-    @required this.onlyCancelButton,
-    @required this.buttonOkText,
-    @required this.buttonCancelText,
-    @required this.buttonOkColor,
-    @required this.buttonCancelColor,
-    @required this.cornerRadius,
-    @required this.buttonRadius,
-    @required this.entryAnimation,
-    @required this.onCancelButtonPressed,
+    Key? key,
+    this.imageWidget,
+    this.title,
+    required this.onOkButtonPressed,
+    required this.description,
+    required this.onlyOkButton,
+    required this.onlyCancelButton,
+    required this.buttonOkText,
+    required this.buttonCancelText,
+    required this.buttonOkColor,
+    required this.buttonCancelColor,
+    required this.cornerRadius,
+    required this.buttonRadius,
+    required this.entryAnimation,
+    required this.onCancelButtonPressed,
   }) : super(key: key);
 
-  final Widget imageWidget;
-  final Text title;
-  final Text description;
+  final Widget? imageWidget;
+  final Text? title;
+  final Text? description;
   final bool onlyOkButton;
   final bool onlyCancelButton;
-  final Text buttonOkText;
-  final Text buttonCancelText;
+  final Text? buttonOkText;
+  final Text? buttonCancelText;
   final Color buttonOkColor;
   final Color buttonCancelColor;
   final double buttonRadius;
   final double cornerRadius;
-  final VoidCallback onOkButtonPressed;
-  final VoidCallback onCancelButtonPressed;
+  final VoidCallback? onOkButtonPressed;
+  final VoidCallback? onCancelButtonPressed;
   final EntryAnimation entryAnimation;
 
   @override
@@ -72,8 +70,8 @@ class BaseGiffyDialog extends StatefulWidget {
 
 class _BaseGiffyDialogState extends State<BaseGiffyDialog>
     with TickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation<Offset> _entryAnimation;
+  AnimationController? _animationController;
+  late Animation<Offset> _entryAnimation;
 
   get _start {
     switch (widget.entryAnimation) {
@@ -112,11 +110,11 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
       _entryAnimation =
           Tween<Offset>(begin: _start, end: Offset(0.0, 0.0)).animate(
         CurvedAnimation(
-          parent: _animationController,
+          parent: _animationController!,
           curve: Curves.easeIn,
         ),
       )..addListener(() => setState(() {}));
-      _animationController.forward();
+      _animationController!.forward();
     }
   }
 
@@ -126,7 +124,7 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
     super.dispose();
   }
 
-  Widget _buildPortraitWidget(BuildContext context, Widget imageWidget) {
+  Widget _buildPortraitWidget(BuildContext context, Widget? imageWidget) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
@@ -158,7 +156,7 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
     );
   }
 
-  Widget _buildLandscapeWidget(BuildContext context, Widget imageWidget) {
+  Widget _buildLandscapeWidget(BuildContext context, Widget? imageWidget) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -200,10 +198,13 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
             : MainAxisAlignment.center,
         children: <Widget>[
           if (!widget.onlyOkButton) ...[
-            RaisedButton(
-              color: widget.buttonCancelColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(widget.buttonRadius)),
+            ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(widget.buttonCancelColor),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.circular(widget.buttonRadius)))),
               onPressed: widget.onCancelButtonPressed ??
                   () => Navigator.of(context).pop(),
               child: widget.buttonCancelText ??
@@ -214,10 +215,15 @@ class _BaseGiffyDialogState extends State<BaseGiffyDialog>
             )
           ],
           if (!widget.onlyCancelButton) ...[
-            RaisedButton(
-              color: widget.buttonOkColor,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(widget.buttonRadius)),
+            ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(widget.buttonOkColor),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(widget.buttonRadius)),
+                  )),
               onPressed: widget.onOkButtonPressed,
               child: widget.buttonOkText ??
                   Text(

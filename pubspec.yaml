@@ -4,12 +4,12 @@ version: 1.8.0
 homepage: https://github.com/xsahil03x/giffy_dialog
 
 environment:
-  sdk: ">=2.2.2 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  flare_flutter: ^2.0.5
+  flare_flutter: ^3.0.2
   
 dev_dependencies:
   flutter_test:

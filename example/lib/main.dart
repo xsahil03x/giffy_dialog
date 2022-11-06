@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:giffy_dialog/giffy_dialog.dart';
+import 'package:my_giffy_dialog/giffy_dialog.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(const MyApp());
 
 const List<Key> keys = [
   Key("Network"),
@@ -13,32 +13,37 @@ const List<Key> keys = [
 ];
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Giffy Dialog Demo',
       theme: ThemeData(primarySwatch: Colors.teal, fontFamily: 'Nunito'),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Giffy Dialog Example"),
+        title: const Text("Giffy Dialog Example"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
+            ElevatedButton(
                 key: keys[0],
-                color: Colors.teal,
-                child: Text(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.teal)),
+                child: const Text(
                   "Network Giffy",
                   style: TextStyle(
                     color: Colors.white,
@@ -54,23 +59,24 @@ class MyHomePage extends StatelessWidget {
                               fit: BoxFit.cover,
                             ),
                             entryAnimation: EntryAnimation.TOP_LEFT,
-                            title: Text(
+                            title: const Text(
                               'Granny Eating Chocolate',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 22.0, fontWeight: FontWeight.w600),
                             ),
-                            description: Text(
+                            description: const Text(
                               'This is a granny eating chocolate dialog box. This library helps you easily create fancy giffy dialog.',
                               textAlign: TextAlign.center,
                             ),
                             onOkButtonPressed: () {},
                           ));
                 }),
-            RaisedButton(
+            ElevatedButton(
                 key: keys[2],
-                color: Colors.teal,
-                child: Text(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.teal)),
+                child: const Text(
                   'Flare Giffy',
                   style: TextStyle(
                     color: Colors.white,
@@ -83,14 +89,14 @@ class MyHomePage extends StatelessWidget {
                             key: keys[3],
                             flarePath: 'assets/space_demo.flr',
                             flareAnimation: 'loading',
-                            title: Text(
+                            title: const Text(
                               'Space Reloading',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 22.0, fontWeight: FontWeight.w600),
                             ),
                             entryAnimation: EntryAnimation.DEFAULT,
-                            description: Text(
+                            description: const Text(
                               'This is a space reloading dialog box. This library helps you easily create fancy flare dialog.',
                               textAlign: TextAlign.center,
                               style: TextStyle(),
@@ -98,10 +104,11 @@ class MyHomePage extends StatelessWidget {
                             onOkButtonPressed: () {},
                           ));
                 }),
-            RaisedButton(
+            ElevatedButton(
                 key: keys[4],
-                color: Colors.teal,
-                child: Text(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.teal)),
+                child: const Text(
                   'Asset Giffy',
                   style: TextStyle(
                     color: Colors.white,
@@ -116,14 +123,14 @@ class MyHomePage extends StatelessWidget {
                               'assets/men_wearing_jacket.gif',
                               fit: BoxFit.cover,
                             ),
-                            title: Text(
+                            title: const Text(
                               'Men Wearing Jackets',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 22.0, fontWeight: FontWeight.w600),
                             ),
                             entryAnimation: EntryAnimation.BOTTOM_RIGHT,
-                            description: Text(
+                            description: const Text(
                               'This is a men wearing jackets dialog box. This library helps you easily create fancy giffy dialog.',
                               textAlign: TextAlign.center,
                               style: TextStyle(),
