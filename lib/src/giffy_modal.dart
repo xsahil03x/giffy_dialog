@@ -17,7 +17,15 @@ part 'giffy_bottom_sheet.dart';
 typedef GiffyBuilder = Widget Function(BuildContext context, Widget giffy);
 
 /// The default [GiffyBuilder] used by [GiffyModal].
-Widget defaultGiffyBuilder(BuildContext context, Widget giffy) => giffy;
+Widget defaultGiffyBuilder(BuildContext context, Widget giffy) {
+  final useMaterial3 = Theme.of(context).useMaterial3;
+  return ClipRRect(
+    borderRadius: useMaterial3
+        ? const BorderRadius.all(Radius.circular(16))
+        : const BorderRadius.all(Radius.circular(4)),
+    child: giffy,
+  );
+}
 
 /// A giffy modal based on Material Design modal.
 ///

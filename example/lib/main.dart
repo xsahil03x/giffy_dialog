@@ -20,8 +20,7 @@ class MyApp extends StatelessWidget {
             useMaterial3: useMaterial3,
             colorSchemeSeed: Colors.teal,
             textTheme: GoogleFonts.ralewayTextTheme(),
-
-        ),
+          ),
           darkTheme: ThemeData(
             brightness: Brightness.dark,
             useMaterial3: useMaterial3,
@@ -157,7 +156,12 @@ class TypedExample extends StatelessWidget {
           return GiffyDialog.rive(
             rive.giffy as RiveAnimation,
             giffyBuilder: (context, rive) {
-              return SizedBox(height: 200, child: rive);
+              return ClipRRect(
+                borderRadius: useMaterial3
+                    ? const BorderRadius.all(Radius.circular(16))
+                    : const BorderRadius.all(Radius.circular(4)),
+                child: SizedBox(height: 200, child: rive),
+              );
             },
             title: rive.title,
             content: rive.content,
@@ -189,7 +193,12 @@ class TypedExample extends StatelessWidget {
           return GiffyBottomSheet.rive(
             rive.giffy as RiveAnimation,
             giffyBuilder: (context, rive) {
-              return SizedBox(height: 200, child: rive);
+              return ClipRRect(
+                borderRadius: useMaterial3
+                    ? const BorderRadius.all(Radius.circular(16))
+                    : const BorderRadius.all(Radius.circular(4)),
+                child: SizedBox(height: 200, child: rive),
+              );
             },
             title: rive.title,
             content: rive.content,
