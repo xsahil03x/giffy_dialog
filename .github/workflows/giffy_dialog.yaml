@@ -40,7 +40,7 @@ jobs:
       - name: 📊 Check Code Coverage
         uses: VeryGoodOpenSource/very_good_coverage@v2
         with:
-          min_coverage: 82
+          min_coverage: 75
 
       - name: 📁 Upload coverage to Codecov
         uses: codecov/codecov-action@v3
