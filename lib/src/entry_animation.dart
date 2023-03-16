@@ -56,14 +56,25 @@ extension on EntryAnimation {
   }
 }
 
+/// A widget that animates its child when it is first added to the tree.
+///
+/// The animation is defined by [animation].
 class EntryAnimatedContainer extends StatefulWidget {
+  /// Creates a [EntryAnimatedContainer].
   const EntryAnimatedContainer({
     Key? key,
     this.animation = EntryAnimation.none,
     required this.child,
   }) : super(key: key);
 
+  /// Defines the entry animation.
+  ///
+  /// Defaults to [EntryAnimation.none].
   final EntryAnimation animation;
+
+  /// The widget to animate when it is first added to the tree.
+  ///
+  /// The child is animated from the offset defined by [animation].
   final Widget child;
 
   @override
