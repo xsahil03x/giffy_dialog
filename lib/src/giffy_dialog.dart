@@ -290,28 +290,6 @@ class GiffyDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dialogTheme = DialogTheme.of(context);
-
-    final dialogChild = GiffyModal(
-      giffy: giffy,
-      giffyBuilder: giffyBuilder,
-      giffyPadding: giffyPadding,
-      title: title,
-      titlePadding: titlePadding,
-      titleTextStyle: titleTextStyle ?? dialogTheme.titleTextStyle,
-      content: content,
-      contentPadding: contentPadding,
-      contentTextStyle: contentTextStyle ?? dialogTheme.contentTextStyle,
-      actions: actions,
-      actionsPadding: actionsPadding ?? dialogTheme.actionsPadding,
-      actionsAlignment: actionsAlignment,
-      actionsOverflowDirection: actionsOverflowDirection,
-      actionsOverflowButtonSpacing: actionsOverflowButtonSpacing,
-      actionsOverflowAlignment: actionsOverflowAlignment,
-      buttonPadding: buttonPadding,
-      semanticLabel: semanticLabel,
-      scrollable: scrollable,
-    );
-
     return EntryAnimatedContainer(
       animation: entryAnimation,
       child: Dialog(
@@ -323,7 +301,26 @@ class GiffyDialog extends StatelessWidget {
         clipBehavior: clipBehavior,
         shape: shape,
         alignment: alignment,
-        child: dialogChild,
+        child: GiffyModal(
+          giffy: giffy,
+          giffyBuilder: giffyBuilder,
+          giffyPadding: giffyPadding,
+          title: title,
+          titlePadding: titlePadding,
+          titleTextStyle: titleTextStyle ?? dialogTheme.titleTextStyle,
+          content: content,
+          contentPadding: contentPadding,
+          contentTextStyle: contentTextStyle ?? dialogTheme.contentTextStyle,
+          actions: actions,
+          actionsPadding: actionsPadding ?? dialogTheme.actionsPadding,
+          actionsAlignment: actionsAlignment,
+          actionsOverflowDirection: actionsOverflowDirection,
+          actionsOverflowButtonSpacing: actionsOverflowButtonSpacing,
+          actionsOverflowAlignment: actionsOverflowAlignment,
+          buttonPadding: buttonPadding,
+          semanticLabel: semanticLabel,
+          scrollable: scrollable,
+        ),
       ),
     );
   }
