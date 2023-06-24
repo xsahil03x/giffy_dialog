@@ -14,6 +14,10 @@ A beautiful and custom alert dialog for flutter highly inspired from <a href="ht
   <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/package_demo.gif?raw=true" alt="An animated image of the GiffyDialog" height="400"/>
 </p>
 
+## Migration from v1 to v2
+
+Please refer to the [migration guide](v1-v2_migration.md) to migrate from v1 to v2.
+
 ## Installation
 
 Add the following to your  `pubspec.yaml`  and replace  `[version]`  with the latest version:
