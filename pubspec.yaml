@@ -12,8 +12,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  rive: ^0.10.2
-  lottie: ^2.2.0
+  rive: ^0.11.3
+  lottie: ^2.4.0
   
 dev_dependencies:
   flutter_test:
