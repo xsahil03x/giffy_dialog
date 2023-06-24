@@ -1,76 +1,92 @@
-1.8.0
+## 2.0.0
 
-    1. Fixed pub scoring errors
+🚨 Breaking
 
-    2. Upgraded flare_flutter dependency.
+- The `NetworkGiffyDialog` class has been replaced with the `GiffyDialog.image` constructor.
+- The `image` property in the old API is now can be set using the `Image.network` in the new API.
+- The `AssetGiffyDialog` class has been replaced with the `GiffyDialog.image` constructor.
+- The `image` property in the old API is now can be set using the `Image.asset` in the new API.
+- The `FlareGiffyDialog` class has been replaced with the `GiffyDialog.rive` constructor.
+- The `flarePath` and `flareAnimation` properties in the old API is now can be set using the `rive` property of
+  type `RiveAnimation` in the new API.
+- The `description` property in the old API is now can be set using the `content` widget in the new API.
+- The `onOkButtonPressed` and `onCancelButtonPressed` properties in the old API are replaced with the `actions`
+  property in the new API to handle button actions.
+- The `onlyOkButton`, `onlyCancelButton`, `buttonOkText`, `buttonCancelText` and all the other button
+  related properties in the old API is no longer available and has been replaced with the `actions` property in the
+  new API to handle button actions.
+- The `cornerRadius` property in the old API is now can be set using the `shape` property in the new API.
+- A new `GiffyDialog.lottie` constructor has been added to support Lottie animations.
 
-1.7.0
+## 1.8.0
 
-    1. Added ability to have only Cancel button,
-    just like only OK button. Thanks to (@SaadBinShahid)
-    
-    2. Upgraded flare_flutter dependency.
+- Fixed pub scoring errors
+- Upgraded flare_flutter dependency.
 
-1.6.1
+## 1.7.0
 
-    Minor Improvements.
+- Added ability to have only Cancel button, just like only OK button. Thanks to (@SaadBinShahid)
+- Upgraded flare_flutter dependency.
 
-1.6.0
+## 1.6.1
 
-    1. Added Some more variations for Entry Animation.
-    
-         enum EntryAnimation {
-           DEFAULT, // Center
-           LEFT,
-           RIGHT,
-           TOP,
-           BOTTOM,
-           TOP_LEFT,
-           TOP_RIGHT,
-           BOTTOM_LEFT,
-           BOTTOM_RIGHT,
-         }
-    
-    2. Added a callback for Cancel Button Pressed.
-    
-    3. Added Documentation
-    
-    4. Minor bug fixes
+- Minor Improvements.
 
-1.5.0
+## 1.6.0
 
-    Added Entry Animation for dialogs.
-    
-    1: DEFAULT,
-    2: LEFT_RIGHT,
-    3: RIGHT_LEFT,
-    4: TOP_BOTTOM,
-    5: BOTTOM_TOP,
+- Added Some more variations for Entry Animation.
 
-1.4.0
+```dart
+enum EntryAnimation {
+  DEFAULT, // Center
+  LEFT,
+  RIGHT,
+  TOP,
+  BOTTOM,
+  TOP_LEFT,
+  TOP_RIGHT,
+  BOTTOM_LEFT,
+  BOTTOM_RIGHT,
+}
+```
 
-    Added Landscape dialogs and reduced code size.
-    
-1.3.0
-    
-    Remove dependency from cached_network_image (More Generic).
+- Added a callback for Cancel Button Pressed.
+- Added Documentation
+- Minor bug fixes
 
-1.2.0
+## 1.5.0
 
-    Add widget tests and description.
+- Added Entry Animation for dialogs.
+    * DEFAULT,
+    * LEFT_RIGHT,
+    * RIGHT_LEFT,
+    * TOP_BOTTOM,
+    * BOTTOM_TOP,
 
-1.1.1
+## 1.4.0
 
-    Fix formatting.
+- Added Landscape dialogs and reduced code size.
 
-1.1.0
+## 1.3.0
 
-    Added Boolean to show only OK button.
+- Remove dependency from cached_network_image (More Generic).
 
-1.0.1
+## 1.2.0
 
-    Minor Changes.
+- Add widget tests and description.
 
-1.0.0
+## 1.1.1
 
-    Initial Release.
+- Fix formatting.
+
+## 1.1.0
+
+- Added Boolean to show only OK button.
+
+## 1.0.1
+
+- Minor Changes.
+
+## 1.0.0
+
+- Initial Release.
