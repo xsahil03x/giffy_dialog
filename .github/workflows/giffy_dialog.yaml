@@ -33,7 +33,7 @@ jobs:
         run: flutter packages get
 
       - name: ✨ Check Formatting
-        run: flutter format --set-exit-if-changed lib test
+        run: dart format --set-exit-if-changed lib test
 
       - name: 🕵️ Analyze
         run: flutter analyze lib test
