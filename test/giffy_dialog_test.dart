@@ -1,7 +1,6 @@
-import 'package:flutter_test/flutter_test.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:giffy_dialog/giffy_dialog.dart';
 
 MaterialApp _buildAppWithDialog(
@@ -1150,80 +1149,80 @@ void main() {
           });
         }
 
-        // for (final bool isM3 in <bool>[true, false]) {
-        //   testWidgets(
-        //       'GiffyDialog padding is correct when only giffy, content and actions are specified [textScaleFactor]=$textScaleFactor [isM3]=$isM3',
-        //       (WidgetTester tester) async {
-        //     final GiffyDialog dialog = GiffyDialog(
-        //       giffy: giffy,
-        //       content: content,
-        //       actions: actions,
-        //     );
-        //
-        //     await openDialog(tester, dialog, textScaleFactor, isM3: isM3);
-        //
-        //     expectTopEdgePadding(
-        //       tester,
-        //       finder: giffyFinder,
-        //       textScaleFactor: textScaleFactor,
-        //       unscaledValue: 0.0,
-        //     );
-        //     expectLeftEdgePadding(
-        //       tester,
-        //       finder: giffyFinder,
-        //       textScaleFactor: textScaleFactor,
-        //       unscaledValue: 0.0,
-        //     );
-        //     expectRightEdgePadding(
-        //       tester,
-        //       finder: giffyFinder,
-        //       textScaleFactor: textScaleFactor,
-        //       unscaledValue: 0.0,
-        //     );
-        //     expectVerticalInnerPadding(
-        //       tester,
-        //       top: giffyFinder,
-        //       bottom: contentFinder,
-        //       value: isM3 ? 16.0 : 20.0,
-        //     );
-        //     expectLeftEdgePadding(
-        //       tester,
-        //       finder: contentFinder,
-        //       textScaleFactor: textScaleFactor,
-        //       unscaledValue: 24.0,
-        //     );
-        //     expectRightEdgePadding(
-        //       tester,
-        //       finder: contentFinder,
-        //       textScaleFactor: textScaleFactor,
-        //       unscaledValue: 24.0,
-        //     );
-        //     expectVerticalInnerPadding(
-        //       tester,
-        //       top: contentFinder,
-        //       bottom: actionsFinder,
-        //       value: 24.0,
-        //     );
-        //     expectLeftEdgePadding(
-        //       tester,
-        //       finder: actionsFinder,
-        //       textScaleFactor: textScaleFactor,
-        //       unscaledValue: 0.0,
-        //     );
-        //     expectRightEdgePadding(
-        //       tester,
-        //       finder: actionsFinder,
-        //       textScaleFactor: textScaleFactor,
-        //       unscaledValue: 0.0,
-        //     );
-        //     expectBottomEdgePadding(
-        //       tester,
-        //       finder: actionsFinder,
-        //       textScaleFactor: textScaleFactor,
-        //       unscaledValue: 0.0,
-        //     );
-        //   });
-        // }
+        for (final bool isM3 in <bool>[true, false]) {
+          testWidgets(
+              'GiffyDialog padding is correct when only giffy, content and actions are specified [textScaleFactor]=$textScaleFactor [isM3]=$isM3',
+              (WidgetTester tester) async {
+            final GiffyDialog dialog = GiffyDialog(
+              giffy: giffy,
+              content: content,
+              actions: actions,
+            );
+
+            await openDialog(tester, dialog, textScaleFactor, isM3: isM3);
+
+            expectTopEdgePadding(
+              tester,
+              finder: giffyFinder,
+              textScaleFactor: textScaleFactor,
+              unscaledValue: 24.0,
+            );
+            expectLeftEdgePadding(
+              tester,
+              finder: giffyFinder,
+              textScaleFactor: textScaleFactor,
+              unscaledValue: 24.0,
+            );
+            expectRightEdgePadding(
+              tester,
+              finder: giffyFinder,
+              textScaleFactor: textScaleFactor,
+              unscaledValue: 24.0,
+            );
+            expectVerticalInnerPadding(
+              tester,
+              top: giffyFinder,
+              bottom: contentFinder,
+              value: isM3 ? 16.0 : 20.0,
+            );
+            expectLeftEdgePadding(
+              tester,
+              finder: contentFinder,
+              textScaleFactor: textScaleFactor,
+              unscaledValue: 24.0,
+            );
+            expectRightEdgePadding(
+              tester,
+              finder: contentFinder,
+              textScaleFactor: textScaleFactor,
+              unscaledValue: 24.0,
+            );
+            expectVerticalInnerPadding(
+              tester,
+              top: contentFinder,
+              bottom: actionsFinder,
+              value: 24.0,
+            );
+            expectLeftEdgePadding(
+              tester,
+              finder: actionsFinder,
+              textScaleFactor: textScaleFactor,
+              unscaledValue: 0.0,
+            );
+            expectRightEdgePadding(
+              tester,
+              finder: actionsFinder,
+              textScaleFactor: textScaleFactor,
+              unscaledValue: 0.0,
+            );
+            expectBottomEdgePadding(
+              tester,
+              finder: actionsFinder,
+              textScaleFactor: textScaleFactor,
+              unscaledValue: 0.0,
+            );
+          });
+        }
       }
     },
   );
