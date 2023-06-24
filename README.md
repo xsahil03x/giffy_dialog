@@ -1,118 +1,137 @@
-# 👏 Giffy Dialogs
-[![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/xsahil03x) [![Twitter](https://img.shields.io/twitter/url/https/github.com/xsahil03x/giffy_dialog.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fxsahil03x%2Fgiffy_dialog)
-
-<p>A beautiful and custom alert dialog for flutter highly inspired from <a href="https://github.com/Shashank02051997/FancyGifDialog-Android">FancyAlertDialog-Android</a>.</p>
-
-The source code is **100% Dart**, and everything resides in the [/lib](https://github.com/xsahil03x/giffy_dialog/tree/master/lib) folder.
-
-
-### Show some :heart: and star the repo to support the project
-
-[![GitHub stars](https://img.shields.io/github/stars/xsahil03x/giffy_dialog.svg?style=social&label=Star)](https://github.com/xsahil03x/giffy_dialog) [![GitHub forks](https://img.shields.io/github/forks/xsahil03x/giffy_dialog.svg?style=social&label=Fork)](https://github.com/xsahil03x/giffy_dialog/fork) [![GitHub watchers](https://img.shields.io/github/watchers/xsahil03x/giffy_dialog.svg?style=social&label=Watch)](https://github.com/xsahil03x/giffy_dialog) [![GitHub followers](https://img.shields.io/github/followers/xsahil03x.svg?style=social&label=Follow)](https://github.com/xsahil03x/giffy_dialog)  
-[![Twitter Follow](https://img.shields.io/twitter/follow/xsahil03x.svg?style=social)](https://twitter.com/xsahil03x)
+# Giffy Dialog
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/MIT)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/xsahil03x/giffy_dialog/blob/master/LICENSE)
-[![Build Status](https://travis-ci.com/xsahil03x/giffy_dialog.svg?branch=master)](https://travis-ci.com/xsahil03x/giffy_dialog)
+[![Dart CI](https://github.com/xsahil03x/giffy_dialog/workflows/giffy_dialog/badge.svg)](https://github.com/xsahil03x/giffy_dialog/actions)
 [![CodeCov](https://codecov.io/gh/xsahil03x/giffy_dialog/branch/master/graph/badge.svg)](https://codecov.io/gh/xsahil03x/giffy_dialog)
-
-# 💻 Installation
-In the `dependencies:` section of your `pubspec.yaml`, add the following line:
-
 [![Version](https://img.shields.io/pub/v/giffy_dialog.svg)](https://pub.dartlang.org/packages/giffy_dialog)
+
+A beautiful and custom alert dialog for flutter highly inspired from <a href="https://github.com/Shashank02051997/FancyGifDialog-Android">FancyAlertDialog-Android</a>.
+
+**Show some ❤️ and star the repo to support the project**
+
+<p>
+  <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/package_demo.gif?raw=true" alt="An animated image of the GiffyDialog" height="400"/>
+</p>
+
+## Migration from v1 to v2
+
+Please refer to the [migration guide](v1-v2_migration.md) to migrate from v1 to v2.
+
+## Installation
+
+Add the following to your  `pubspec.yaml`  and replace  `[version]`  with the latest version:
 
 ```yaml
 dependencies:
-  giffy_dialog: <latest version>
+  giffy_dialog: ^[version]
 ```
 
+## Usage
 
-# ❔ Usage
-
-### Import this class
+Import the package:
 
 ```dart
 import 'package:giffy_dialog/giffy_dialog.dart';
 ```
 
-### Network giffy dialog
-
-<img src="https://user-images.githubusercontent.com/25670178/51350453-379afc80-1ace-11e9-91b4-3ceea44e7bad.gif" align = "right" height = "350" alt="Network">
+Use it like a dialog:
 
 ```dart
-onPressed: () {
-  showDialog(
-  context: context,builder: (_) => NetworkGiffyDialog(
-    imageUrl:"https://raw.githubusercontent.com/Shashank02051997/
-              FancyGifDialog-Android/master/GIF's/gif14.gif",
-    title: Text('Granny Eating Chocolate',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-            fontSize: 22.0,
-            fontWeight: FontWeight.w600)),
-    description:Text('This is a granny eating chocolate dialog box.
-          This library helps you easily create fancy giffy dialog',
-          textAlign: TextAlign.center,
-        ),
-    entryAnimation: EntryAnimation.BOTTOM_TOP,
-    onOkButtonPressed: () {},
-  ) );
-}
+ showDialog(
+   context: context,
+   builder: (BuildContext context) {
+     return GiffyDialog.image(
+       Image.network(
+         "https://raw.githubusercontent.com/Shashank02051997/FancyGifDialog-Android/master/GIF's/gif14.gif",
+         height: 200,
+         fit: BoxFit.cover,
+       ),
+       title: Text(
+         'Image Animation',
+         textAlign: TextAlign.center,
+       ),
+       content: Text(
+         'This is a image animation dialog box. This library helps you easily create fancy giffy dialog.',
+         textAlign: TextAlign.center,
+       ),
+       actions: [
+         TextButton(
+           onPressed: () => Navigator.pop(context, 'CANCEL'),
+           child: const Text('CANCEL'),
+         ),
+         TextButton(
+           onPressed: () => Navigator.pop(context, 'OK'),
+           child: const Text('OK'),
+         ),
+       ],
+     );
+   },
+ );
 ```
 
-### Flare giffy dialog
-
-<img src="https://user-images.githubusercontent.com/25670178/51350659-c576e780-1ace-11e9-94f2-ce463af2218a.gif" align = "right" height = "350" alt="Flare">
+Or use it like a bottom sheet:
 
 ```dart
-onPressed: () {
-  showDialog(
-  context: context,builder: (_) => FlareGiffyDialog(
-    flarePath: 'assets/space_demo.flr',
-    flareAnimation: 'loading',
-    title: Text('Space Reloading',
-           style: TextStyle(
-           fontSize: 22.0, fontWeight: FontWeight.w600),
-    ),
-    description: Text('This is a space reloading dialog box.
-          This library helps you easily create fancy flare dialog.',
-          textAlign: TextAlign.center,
-          style: TextStyle(),
-        ),
-    entryAnimation: EntryAnimation.DEFAULT,
-    onOkButtonPressed: () {},
-  ) );
-}
+ showModalBottomSheet(
+   context: context,
+   clipBehavior: Clip.antiAlias,
+   isScrollControlled: true,
+   shape: RoundedRectangleBorder(
+     borderRadius: BorderRadius.vertical(
+       top: Radius.circular(useMaterial3 ? 32 : 4),
+     ),
+   ),
+   builder: (BuildContext context) {
+     return GiffyBottomSheet.image(
+       Image.network(
+         "https://raw.githubusercontent.com/Shashank02051997/FancyGifDialog-Android/master/GIF's/gif14.gif",
+         height: 200,
+         fit: BoxFit.cover,
+       ),
+       title: Text(
+         'Image Animation',
+         textAlign: TextAlign.center,
+       ),
+       content: Text(
+         'This is a image animation bottom sheet. This library helps you easily create fancy giffy bottom sheet.',
+         textAlign: TextAlign.center,
+       ),
+       actions: [
+         TextButton(
+           onPressed: () => Navigator.pop(context, 'CANCEL'),
+           child: const Text('CANCEL'),
+         ),
+         TextButton(
+           onPressed: () => Navigator.pop(context, 'OK'),
+           child: const Text('OK'),
+         ),
+       ],
+     );
+   },
+ );
 ```
 
-### Asset giffy dialog
+## Demo
 
-<img src="https://user-images.githubusercontent.com/25670178/51350846-4504b680-1acf-11e9-8f9d-d6704742ff21.gif" align = "right" height = "350" alt="Asset">
+|                | Image Giffy                                                                                                                                       | Rive Giffy                                                                                                                                      | Lottie Giffy                                                                                                                                        |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Material 2** | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m2/image_giffy_dialog.gif?raw=true" height="400" alt="Image Giffy Dialog"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m2/rive_giffy_dialog.gif?raw=true" height="400" alt="Rive Giffy Dialog"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m2/lottie_giffy_dialog.gif?raw=true" height="400" alt="Lottie Giffy Dialog"/> |
+| **Material 3** | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m3/image_giffy_dialog.gif?raw=true" height="400" alt="Image Giffy Dialog"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m3/rive_giffy_dialog.gif?raw=true" height="400" alt="Rive Giffy Dialog"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m3/lottie_giffy_dialog.gif?raw=true" height="400" alt="Lottie Giffy Dialog"/> |
 
-```dart
-onPressed: () {
-  showDialog(
-  context: context,builder: (_) => AssetGiffyDialog(
-    imagePath: 'assets/men_wearing_jacket.gif',
-    title: Text('Men Wearing Jackets',
-            style: TextStyle(
-            fontSize: 22.0, fontWeight: FontWeight.w600),
-    ),
-    description: Text('This is a men wearing jackets dialog box.
-          This library helps you easily create fancy giffy dialog.',
-          textAlign: TextAlign.center,
-          style: TextStyle(),
-        ),
-    entryAnimation: EntryAnimation.RIGHT_LEFT,
-    onOkButtonPressed: () {},
-  ) );
-}
-```
 
-# 👍 How to Contribute
-If you are interested in contributing to the project, please read [Contributing guide](CONTRIBUTING.md) and let us know!
+|                | Image Giffy                                                                                                                                                  | Rive Giffy                                                                                                                                                 | Lottie Giffy                                                                                                                                                   |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Material 2** | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m2/image_giffy_bottom_sheet.gif?raw=true" height="400" alt="Image Giffy BottomSheet"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m2/rive_giffy_bottom_sheet.gif?raw=true" height="400" alt="Rive Giffy BottomSheet"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m2/lottie_giffy_bottom_sheet.gif?raw=true" height="400" alt="Lottie Giffy BottomSheet"/> |
+| **Material 3** | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m3/image_giffy_bottom_sheet.gif?raw=true" height="400" alt="Image Giffy BottomSheet"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m3/rive_giffy_bottom_sheet.gif?raw=true" height="400" alt="Rive Giffy BottomSheet"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m3/lottie_giffy_bottom_sheet.gif?raw=true" height="400" alt="Lottie Giffy BottomSheet"/> |
 
-## Contributors ✨
+## Customization
+
+The GiffyDialog widget provides several customization options, such as the dialog title, description, buttons,
+animations, and more. Please refer to the [documentation](https://pub.dev/documentation/giffy_dialog/latest/) for a
+complete list of available options.
+
+## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -143,18 +162,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
-# 📃 License
+## License
 
-    Copyright (c) 2019 Sahil Kumar
-    
-    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-    
-    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-    
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-## Getting Started
-
-For help getting started with Flutter, view our online [documentation](https://flutter.io/).
-
-For help on editing package code, view the [documentation](https://flutter.io/developing-packages/).
+[MIT License](LICENSE)
