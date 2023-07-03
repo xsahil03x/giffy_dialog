@@ -10,6 +10,8 @@ A beautiful and custom alert dialog for flutter highly inspired from <a href="ht
 
 **Show some ❤️ and star the repo to support the project**
 
+Live Demo: https://xsahil03x.github.io/giffy_dialog
+
 <p>
   <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/package_demo.gif?raw=true" alt="An animated image of the GiffyDialog" height="400"/>
 </p>
