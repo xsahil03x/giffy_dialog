@@ -49,5 +49,29 @@ jobs:
       - name: 📁 Upload coverage to Codecov
         uses: codecov/codecov-action@v3
 
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    defaults:
+      run:
+        working-directory: example
+    steps:
+      - name: 📚 Git Checkout
+        uses: actions/checkout@v3
+
+      - name: 🐦 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.10.0
+          channel: stable
+          cache: true
+
+      - name: 📁 Build and release
+        uses: bluefireteam/flutter-gh-pages@v7
+        with:
+          baseHref: /giffy_dialog/
+          workingDir: example
+
   pana:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/pana.yml@v1
