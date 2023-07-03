@@ -68,7 +68,7 @@ jobs:
           cache: true
 
       - name: 📁 Build and release
-        uses: bluefireteam/flutter-gh-pages@v7
+        uses: bluefireteam/flutter-gh-pages@v8
         with:
           baseHref: /giffy_dialog/
           workingDir: example
