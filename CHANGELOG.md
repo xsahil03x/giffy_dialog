@@ -1,7 +1,11 @@
+## 2.0.0+2
+
+- Fix README.md gif links.
+
 ## 2.0.0+1
 
-- Add live demo link to README.md
-- Update README.md
+- Add live demo link to README.md.
+- Update README.md.
 
 ## 2.0.0
 
