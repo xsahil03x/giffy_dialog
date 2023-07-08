@@ -1,3 +1,8 @@
+## 2.0.0+1
+
+- Add live demo link to README.md
+- Update README.md
+
 ## 2.0.0
 
 🚨 Breaking
