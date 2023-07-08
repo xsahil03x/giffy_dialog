@@ -13,7 +13,7 @@ A beautiful and custom alert dialog for flutter highly inspired from <a href="ht
 Live Demo: https://xsahil03x.github.io/giffy_dialog
 
 <p>
-  <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/package_demo.gif?raw=true" alt="An animated image of the GiffyDialog" height="400"/>
+  <img src="asset/package_demo.gif" alt="An animated image of the GiffyDialog" height="400"/>
 </p>
 
 ## Migration from v1 to v2
@@ -116,16 +116,41 @@ Or use it like a bottom sheet:
 
 ## Demo
 
-|                | Image Giffy                                                                                                                                       | Rive Giffy                                                                                                                                      | Lottie Giffy                                                                                                                                        |
-|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Material 2** | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m2/image_giffy_dialog.gif?raw=true" height="400" alt="Image Giffy Dialog"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m2/rive_giffy_dialog.gif?raw=true" height="400" alt="Rive Giffy Dialog"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m2/lottie_giffy_dialog.gif?raw=true" height="400" alt="Lottie Giffy Dialog"/> |
-| **Material 3** | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m3/image_giffy_dialog.gif?raw=true" height="400" alt="Image Giffy Dialog"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m3/rive_giffy_dialog.gif?raw=true" height="400" alt="Rive Giffy Dialog"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m3/lottie_giffy_dialog.gif?raw=true" height="400" alt="Lottie Giffy Dialog"/> |
-
-
-|                | Image Giffy                                                                                                                                                  | Rive Giffy                                                                                                                                                 | Lottie Giffy                                                                                                                                                   |
-|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Material 2** | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m2/image_giffy_bottom_sheet.gif?raw=true" height="400" alt="Image Giffy BottomSheet"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m2/rive_giffy_bottom_sheet.gif?raw=true" height="400" alt="Rive Giffy BottomSheet"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m2/lottie_giffy_bottom_sheet.gif?raw=true" height="400" alt="Lottie Giffy BottomSheet"/> |
-| **Material 3** | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m3/image_giffy_bottom_sheet.gif?raw=true" height="400" alt="Image Giffy BottomSheet"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m3/rive_giffy_bottom_sheet.gif?raw=true" height="400" alt="Rive Giffy BottomSheet"/> | <img src="https://github.com/xsahil03x/giffy_dialog/blob/master/asset/m3/lottie_giffy_bottom_sheet.gif?raw=true" height="400" alt="Lottie Giffy BottomSheet"/> |
+<table>
+  <tr>
+    <th></th>
+    <th colspan="4">Giffy Dialog</th>
+    <th colspan="4">Giffy BottomSheet</th>
+  </tr>
+  <tr>
+    <th></th>
+    <th colspan="2">Material 2</th>
+    <th colspan="2">Material 3</th>
+    <th colspan="2">Material 2</th>
+    <th colspan="2">Material 3</th>
+  </tr>
+  <tr>
+    <th>Image Giffy</th>
+    <td colspan="2"><img src="asset/m2/image_giffy_dialog.gif" height="400" alt="Image Giffy Dialog"/></td>
+    <td colspan="2"><img src="asset/m3/image_giffy_dialog.gif" height="400" alt="Image Giffy Dialog"/></td>
+    <td colspan="2"><img src="asset/m2/image_giffy_bottom_sheet.gif" height="400" alt="Image Giffy Dialog"/></td>
+    <td colspan="2"><img src="asset/m3/image_giffy_bottom_sheet.gif" height="400" alt="Image Giffy Dialog"/></td>
+  </tr>
+  <tr>
+    <th>Rive Giffy</th>
+    <td colspan="2"><img src="asset/m2/rive_giffy_dialog.gif" height="400" alt="Image Giffy Dialog"/></td>
+    <td colspan="2"><img src="asset/m3/rive_giffy_dialog.gif" height="400" alt="Image Giffy Dialog"/></td>
+    <td colspan="2"><img src="asset/m2/rive_giffy_bottom_sheet.gif" height="400" alt="Image Giffy Dialog"/></td>
+    <td colspan="2"><img src="asset/m3/rive_giffy_bottom_sheet.gif" height="400" alt="Image Giffy Dialog"/></td>
+  </tr>
+  <tr>
+    <th>Lottie Giffy</th>
+    <td colspan="2"><img src="asset/m2/lottie_giffy_dialog.gif" height="400" alt="Image Giffy Dialog"/></td>
+    <td colspan="2"><img src="asset/m3/lottie_giffy_dialog.gif" height="400" alt="Image Giffy Dialog"/></td>
+    <td colspan="2"><img src="asset/m2/lottie_giffy_bottom_sheet.gif" height="400" alt="Image Giffy Dialog"/></td>
+    <td colspan="2"><img src="asset/m3/lottie_giffy_bottom_sheet.gif" height="400" alt="Image Giffy Dialog"/></td>
+  </tr>
+</table>
 
 ## Customization
 
