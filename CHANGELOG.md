@@ -1,5 +1,7 @@
 ## Upcoming
 
+- Bump rive version to ^0.13.0.
+- Bump lottie version to ^3.0.0.
 - Bump minimum Flutter version to 3.16.0.
 
 ## 2.0.0+2
