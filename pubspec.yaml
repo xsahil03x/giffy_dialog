@@ -12,7 +12,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  rive: ^0.11.3
+  rive: ">=0.11.3 <0.14.0"
   lottie: ^2.4.0
 
 dev_dependencies:
