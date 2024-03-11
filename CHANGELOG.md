@@ -1,3 +1,7 @@
+## Upcoming
+
+- Bump minimum Flutter version to 3.16.0.
+
 ## 2.0.0+2
 
 - Fix README.md gif links.

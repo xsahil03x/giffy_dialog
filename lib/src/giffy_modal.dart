@@ -327,9 +327,12 @@ class GiffyModal extends StatelessWidget {
 
     // The paddingScaleFactor is used to adjust the padding of modal's
     // children.
-    final paddingScaleFactor =
-        _paddingScaleFactor(MediaQuery.of(context).textScaleFactor);
-    final textDirection = Directionality.maybeOf(context);
+    const double fontSizeToScale = 14.0;
+    final double effectiveTextScale =
+        MediaQuery.textScalerOf(context).scale(fontSizeToScale) /
+            fontSizeToScale;
+    final double paddingScaleFactor = _scalePadding(effectiveTextScale);
+    final TextDirection? textDirection = Directionality.maybeOf(context);
 
     final bool belowIsTitle = title != null;
     final bool belowIsContent = !belowIsTitle && content != null;
@@ -486,7 +489,7 @@ class GiffyModal extends StatelessWidget {
   }
 }
 
-double _paddingScaleFactor(double textScaleFactor) {
+double _scalePadding(double textScaleFactor) {
   final double clampedTextScaleFactor = clampDouble(textScaleFactor, 1.0, 2.0);
   // The final padding scale factor is clamped between 1/3 and 1. For example,
   // a non-scaled padding of 24 will produce a padding between 24 and 8.

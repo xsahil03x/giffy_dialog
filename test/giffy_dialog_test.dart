@@ -20,9 +20,9 @@ MaterialApp _buildAppWithDialog(
                 showDialog<void>(
                   context: context,
                   builder: (BuildContext context) {
-                    return MediaQuery(
-                      data: MediaQuery.of(context)
-                          .copyWith(textScaleFactor: textScaleFactor),
+                    return MediaQuery.withClampedTextScaling(
+                      minScaleFactor: textScaleFactor,
+                      maxScaleFactor: textScaleFactor,
                       child: dialog,
                     );
                   },
@@ -241,17 +241,21 @@ void main() {
   });
 
   testWidgets('Null giffyDialog shape', (WidgetTester tester) async {
+    final ThemeData theme = ThemeData();
     const GiffyDialog dialog = GiffyDialog(
       giffy: Icon(Icons.ac_unit),
       actions: <Widget>[],
     );
-    await tester.pumpWidget(_buildAppWithDialog(dialog));
+    await tester.pumpWidget(_buildAppWithDialog(dialog, theme: theme));
 
     await tester.tap(find.text('X'));
     await tester.pumpAndSettle();
 
     final Material materialWidget = _getMaterialFromDialog(tester);
-    expect(materialWidget.shape, _defaultM2DialogShape);
+    expect(
+      materialWidget.shape,
+      theme.useMaterial3 ? _defaultM3DialogShape : _defaultM2DialogShape,
+    );
   });
 
   testWidgets('Rectangular giffyDialog shape', (WidgetTester tester) async {
@@ -493,7 +497,7 @@ void main() {
     );
 
     await tester.pumpWidget(
-      _buildAppWithDialog(dialog),
+      _buildAppWithDialog(dialog, theme: ThemeData(useMaterial3: false)),
     );
 
     await tester.tap(find.text('X'));
@@ -1605,6 +1609,7 @@ void main() {
 
     Widget buildFrame(MainAxisAlignment? alignment) {
       return MaterialApp(
+        theme: ThemeData(useMaterial3: false),
         home: Scaffold(
           body: GiffyDialog(
             giffy: const SizedBox(),

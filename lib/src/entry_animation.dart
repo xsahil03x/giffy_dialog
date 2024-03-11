@@ -62,10 +62,10 @@ extension on EntryAnimation {
 class EntryAnimatedContainer extends StatefulWidget {
   /// Creates a [EntryAnimatedContainer].
   const EntryAnimatedContainer({
-    Key? key,
+    super.key,
     this.animation = EntryAnimation.none,
     required this.child,
-  }) : super(key: key);
+  });
 
   /// Defines the entry animation.
   ///
