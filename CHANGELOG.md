@@ -1,4 +1,4 @@
-## Upcoming
+## 2.2.0
 
 - Fix `Image` is imported from both packages. [#110](https://github.com/xsahil03x/giffy_dialog/issues/110)
 
