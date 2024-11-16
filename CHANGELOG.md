@@ -1,3 +1,7 @@
+## Upcoming
+
+- Fix `Image` is imported from both packages. [#110](https://github.com/xsahil03x/giffy_dialog/issues/110)
+
 ## 2.1.0
 
 - Bump rive version to ^0.13.0.
