@@ -6,13 +6,13 @@ repository: https://github.com/xsahil03x/giffy_dialog
 issue_tracker: https://github.com/xsahil03x/giffy_dialog/issues
 
 environment:
-  sdk: ^3.2.0
-  flutter: ">=3.16.0"
+  sdk: ^3.4.0
+  flutter: ">=3.22.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  rive: ^0.13.0
+  rive: ^0.13.10
   lottie: ^3.1.0
 
 dev_dependencies:

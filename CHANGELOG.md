@@ -1,12 +1,18 @@
+## Upcoming
+
+- Bump rive version to `^0.13.10`.
+- Bump lottie version to `^3.1.0`.
+- Bump minimum Flutter version to `3.22.0`.
+
 ## 2.2.0
 
 - Fix `Image` is imported from both packages. [#110](https://github.com/xsahil03x/giffy_dialog/issues/110)
 
 ## 2.1.0
 
-- Bump rive version to ^0.13.0.
-- Bump lottie version to ^3.0.0.
-- Bump minimum Flutter version to 3.16.0.
+- Bump rive version to `^0.13.0`.
+- Bump lottie version to `^3.0.0`.
+- Bump minimum Flutter version to `3.16.0`.
 
 ## 2.0.0+2
 
