@@ -1,4 +1,4 @@
-## Upcoming
+## 2.3.0
 
 - Bump rive version to `^0.13.10`.
 - Bump lottie version to `^3.1.0`.
