@@ -137,7 +137,7 @@ class GiffyDialog extends StatelessWidget {
 
   /// Creates a giffy dialog which uses a [RiveAnimation] as the [giffy].
   const GiffyDialog.rive(
-    RiveAnimation rive, {
+    rive.RiveAnimation rive, {
     super.key,
     this.giffyBuilder = defaultGiffyBuilder,
     this.giffyPadding,
