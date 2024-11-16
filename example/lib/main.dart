@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:giffy_dialog/giffy_dialog.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 final material3Notifier = ValueNotifier<bool>(true);
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(
@@ -35,6 +37,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +71,7 @@ class MyHomePage extends StatelessWidget {
 }
 
 class MaterialToggleButtons extends StatelessWidget {
-  const MaterialToggleButtons({Key? key}) : super(key: key);
+  const MaterialToggleButtons({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +91,6 @@ class MaterialToggleButtons extends StatelessWidget {
 
     return ToggleButtons(
       isSelected: [!useMaterial3, useMaterial3],
-      children: [Text('Material 2'), Text('Material 3')],
       borderRadius: borderRadius,
       borderColor: borderColor,
       selectedBorderColor: borderColor,
@@ -101,6 +104,7 @@ class MaterialToggleButtons extends StatelessWidget {
       onPressed: (index) {
         material3Notifier.value = index == 1;
       },
+      children: [Text('Material 2'), Text('Material 3')],
     );
   }
 }
@@ -216,7 +220,7 @@ class TypedExample extends StatelessWidget {
       );
     }
 
-    return Container(
+    return SizedBox(
       height: 36,
       child: Row(
         children: [

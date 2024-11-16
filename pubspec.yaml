@@ -6,19 +6,19 @@ repository: https://github.com/xsahil03x/giffy_dialog
 issue_tracker: https://github.com/xsahil03x/giffy_dialog/issues
 
 environment:
-  sdk: ">=3.2.0 <4.0.0"
+  sdk: ^3.2.0
   flutter: ">=3.16.0"
 
 dependencies:
   flutter:
     sdk: flutter
   rive: ^0.13.0
-  lottie: ^3.0.0
+  lottie: ^3.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+  flutter_lints: ">=4.0.0 <6.0.0"
 
 topics:
   - dialog

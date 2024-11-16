@@ -1,4 +1,4 @@
-library giffy_dialog;
+library;
 
 export 'package:lottie/lottie.dart';
 export 'package:rive/rive.dart';
