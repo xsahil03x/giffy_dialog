@@ -121,7 +121,7 @@ class GiffyBottomSheet extends StatelessWidget {
 
   /// Creates an giffy bottom sheet which uses a [RiveAnimation] as the [giffy].
   const GiffyBottomSheet.rive(
-    RiveAnimation rive, {
+    rive.RiveAnimation rive, {
     super.key,
     this.giffyBuilder = defaultGiffyBuilder,
     this.giffyPadding,
